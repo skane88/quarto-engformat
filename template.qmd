@@ -4,9 +4,9 @@ format:
   engformat-typst: default
 ---
 
-## Introduction
+# Calculation Objective / Scope
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
+This is a Quarto document template (`.qmd`) intended to be used to develop engineering calculations in the format of a typical engineering calculation pad.
 
 ## More Information
 
@@ -14,5 +14,33 @@ You can learn more about creating custom Typst templates here:
 
 <https://quarto.org/docs/prerelease/1.4/typst.html#custom-formats>
 
+# Calculation Assumptions
+Document key calculation assumptions here. Generally just repeat the assumptions from the assumptions tab, but if there are a lot summarise the most important handful.									
+
+* Assumption 1
+* Assumption 2
+* ...
+
+# Software Used
+
+* MS Excel for calculations
+* Space Gass / Strand7 / RFEM, your packages here....
+* ...
+
+# Holds
+
+Some holds here
+
+```{=typst}
+#line(length: 100%)
+```
 
 
+| Revision |  Date  |  Description  |  Prepared  |  Checked  | Approved|
+|----------|--------|---------------|------------|-----------|-----------|
+|    A     | 24/04/2024| Preliminary|A. Engineer |B. Engineer|C. Engineer|
+|          |        |               |            |           |           |
+|          |        |               |            |           |           |
+:Revisions {#tbl-revisions, .striped}
+
+_This calculation was prepared by \<SOME ENG COMPANY\> pursuant to the Engineering Services Contract <Contract> between \<SOME ENG COMPANY\> and \<CLIENT\> in connection with the services for \<PROJECT TITLE\>_

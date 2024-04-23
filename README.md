@@ -1,11 +1,11 @@
 # Engformat Format
 
+A custom Typst format for writing engineering calculations.
+
 ## Installing
 
-_TODO_: Replace the `<github-organization>` with your GitHub organization.
-
 ```bash
-quarto use template <github-organization>/engformat
+quarto use template skane88/quarto-engformat
 ```
 
 This will install the format extension and create an example qmd file

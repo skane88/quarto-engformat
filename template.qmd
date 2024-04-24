@@ -44,3 +44,21 @@ Some holds here
 :Revisions {#tbl-revisions, .striped}
 
 _This calculation was prepared by \<SOME ENG COMPANY\> pursuant to the Engineering Services Contract <Contract> between \<SOME ENG COMPANY\> and \<CLIENT\> in connection with the services for \<PROJECT TITLE\>_
+
+# TOC
+
+#TODO
+
+# Introduction
+
+# Assumptions
+
+# Drawings
+
+# Methodology
+
+# Calculation
+
+# Appendix A
+
+# Appendix B

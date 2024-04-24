@@ -12,7 +12,7 @@
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
 
-#show: doc => article(
+#show: doc => engformat(
 $if(title)$
   title: [$title$],
 $endif$

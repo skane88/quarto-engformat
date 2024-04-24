@@ -13,8 +13,37 @@
 #let engformat(
   title: none,
   authors: none,
-  date: none, cols: 1, margin: (), paper: "A4", lang: "en", region: "AUS", font: (), fontsize: 10pt, sectionnumbering: none, toc: false, doc
-  ) = {}
+  date: none,
+  cols: 1,
+  margin: (inside: 2.5cm, outside: 1.5cm, top: 1.5cm, bottom: 1.5cm),
+  paper: "a4",
+  lang: "en",
+  region: "AU",
+  font: (),
+  fontsize: 10pt,
+  sectionnumbering: "1",
+  toc: false,
+  doc
+  ) = {
+    set page(
+    paper: paper,
+    margin: margin,
+    numbering: "1",
+  )
+  set par(justify: true)
+  set text(lang: lang,
+           region: region,
+           font: font,
+           size: fontsize)
+  set heading(numbering: sectionnumbering)
+  
+  if cols == 1 {
+    doc
+  } else {
+    columns(cols, doc)
+  }
+
+}
 
 #let article(
   title: none,

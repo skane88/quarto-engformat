@@ -61,17 +61,7 @@
   toc: false,
   doc,
 ) = {
-  set page(
-    paper: paper,
-    margin: margin,
-    numbering: "1",
-  )
-  set par(justify: true)
-  set text(lang: lang,
-           region: region,
-           font: font,
-           size: fontsize)
-  set heading(numbering: sectionnumbering)
+  
 
   if title != none {
     align(center)[#block(inset: 2em)[
@@ -116,9 +106,4 @@
     ]
   }
 
-  if cols == 1 {
-    doc
-  } else {
-    columns(cols, doc)
-  }
 }

@@ -46,9 +46,9 @@
       #table(
         columns: 6*(1fr,),
         rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
-        table.cell(align: center)[#logo(logo_path:logo_company)],
-        table.cell(colspan:4, align: center)[#text(size: 28pt)[*CALCULATION SHEET*]],
-        table.cell(align: center)[#logo(logo_path:logo_client)],
+        table.cell(align: center, inset: 2pt)[#logo(logo_path:logo_company)],
+        table.cell(colspan:4, align: center + horizon)[#text(size: 28pt)[*CALCULATION SHEET*]],
+        table.cell(align: center, inset: 2pt)[#logo(logo_path:logo_client)],
         [],[],[],[],[],[],
         [],[],[],[],[],[],
         [],[],[],[],[],[],

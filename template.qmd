@@ -1,5 +1,5 @@
 ---
-title: Untitled
+title: Some Title
 format:
   engformat-typst:
     company: Some company

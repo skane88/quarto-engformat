@@ -62,7 +62,11 @@ Some holds here
 
 _This calculation was prepared by \<SOME ENG COMPANY\> pursuant to the Engineering Services Contract <Contract> between \<SOME ENG COMPANY\> and \<CLIENT\> in connection with the services for \<PROJECT TITLE\>_
 
-# TOC
+```{=typst}
+#pagebreak()
+```
+
+# Table Of Contents
 
 #TODO
 
@@ -75,6 +79,12 @@ _This calculation was prepared by \<SOME ENG COMPANY\> pursuant to the Engineeri
 # Methodology
 
 # Calculation
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
 
 # Appendix A
 

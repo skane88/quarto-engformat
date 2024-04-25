@@ -63,6 +63,7 @@
 ]
 
 #let like_header(it) = {
+  v(0.5em)
   box(width: 100%, stroke: (bottom:1pt), outset: (bottom: -2pt))[
     #set text(weight: "light", size: 17pt)
     #smallcaps(it)

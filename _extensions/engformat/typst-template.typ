@@ -15,7 +15,7 @@
   authors: none,
   date: none,
   cols: 1,
-  margin: (inside: 2.5cm, outside: 1.5cm, top: 1.5cm, bottom: 1.5cm),
+  margin: (inside: 2.5cm, outside: 1.5cm, top: 2.5cm, bottom: 2.5cm),
   paper: "a4",
   lang: "en",
   region: "AU",
@@ -29,6 +29,13 @@
     paper: paper,
     margin: margin,
     numbering: "1",
+    footer: [
+      #box(width:100%, stroke: (top: 1pt), outset:(top: 6pt))[
+        #set align(center)
+        #set text(size: 9pt)
+        #counter(page).display("1 of 1", both:true)
+      ]
+    ]
   )
   set par(justify: true)
   set text(lang: lang,

@@ -19,9 +19,9 @@
   paper: "a4",
   lang: "en",
   region: "AU",
-  font: (),
+  font: ("calibri"),
   fontsize: 10pt,
-  sectionnumbering: "1",
+  sectionnumbering: "1.1",
   toc: false,
   doc
   ) = {
@@ -44,6 +44,16 @@
   }
 
 }
+
+// format heading 1 differently from the rest.
+#show heading.where(
+  level: 1
+): it => block(width: 100%)[
+  #box(width: 100%, stroke: (bottom:1pt), outset: (bottom: 4pt))[
+  #set text(weight: "light", size: 17pt)
+  #counter(heading).display(it.numbering) #smallcaps(it.body)]
+  #v(0.5em)
+]
 
 #let article(
   title: none,

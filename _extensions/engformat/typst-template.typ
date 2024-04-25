@@ -10,12 +10,16 @@
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
 
+#let logo(logo_path:none) = {
+  if logo_path != none {[#image(logo_path)]} else {[*NO LOGO*]}
+}
+
 #let engformat(
   title: none,
   authors: none,
   date: none,
   cols: 1,
-  margin: (inside: 2.5cm, outside: 1.5cm, top: 4cm, bottom: 2.5cm),
+  margin: (inside: 2.5cm, outside: 1.5cm, top: 4.5cm, bottom: 2.5cm),
   paper: "a4",
   lang: "en",
   region: "AU",
@@ -23,6 +27,8 @@
   fontsize: 10pt,
   sectionnumbering: "1.1",
   toc: false,
+  logo_company: none,
+  logo_client: none,
   doc
   ) = {
     set page(
@@ -35,6 +41,18 @@
         #set text(size: 9pt)
         #counter(page).display("1 of 1", both:true)
       ]
+    ],
+    header: [
+      #table(
+        columns: 6*(1fr,),
+        rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
+        table.cell(align: center)[#logo(logo_path:logo_company)],
+        table.cell(colspan:4, align: center)[#text(size: 28pt)[*CALCULATION SHEET*]],
+        table.cell(align: center)[#logo(logo_path:logo_client)],
+        [],[],[],[],[],[],
+        [],[],[],[],[],[],
+        [],[],[],[],[],[],
+      )
     ]
   )
   set par(justify: true)

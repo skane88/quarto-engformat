@@ -1,6 +1,6 @@
 
 // This is an example typst template (based on the default template that ships
-// with Quarto). It defines a typst function named 'article' which provides
+// with Quarto). It defines a typst function named 'engformat' which provides
 // various customization options. This function is called from the 
 // 'typst-show.typ' file (which maps Pandoc metadata function arguments)
 //
@@ -44,6 +44,18 @@
            size: fontsize)
   set heading(numbering: sectionnumbering)
   
+  // format heading 1 differently from the rest.
+  show heading.where(
+    level: 1
+  ): it => {
+    block(width: 100%)[
+      #box(width: 100%, stroke: (bottom:1pt), outset: (bottom: .5em))[
+      #set text(weight: "light", size: 17pt)
+      #counter(heading).display(it.numbering) #smallcaps(it.body)]
+      #v(0.5em)
+    ]
+  }
+
   if cols == 1 {
     doc
   } else {
@@ -51,16 +63,6 @@
   }
 
 }
-
-// format heading 1 differently from the rest.
-#show heading.where(
-  level: 1
-): it => block(width: 100%)[
-  #box(width: 100%, stroke: (bottom:1pt), outset: (bottom: 4pt))[
-  #set text(weight: "light", size: 17pt)
-  #counter(heading).display(it.numbering) #smallcaps(it.body)]
-  #v(0.5em)
-]
 
 #let like_header(it) = {
   v(0.5em)

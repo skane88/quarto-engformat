@@ -53,6 +53,16 @@
     paper: paper,
     margin: margin,
     numbering: "1",
+    background: context [
+      #place(
+        top + left,
+        dx: {
+                if calc.even(counter(page).get().first()) {1.5cm} else {2.5cm}
+              },
+        dy: 4.5cm,
+        box(width:80.95%, height:76.5%, stroke: 1pt)
+      )
+      ],
     footer: [
       #box(width:100%, stroke: (top: 1pt), outset:(top: 6pt))[
         #set align(right)

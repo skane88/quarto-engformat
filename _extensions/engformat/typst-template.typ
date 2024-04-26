@@ -19,7 +19,7 @@
   authors: none,
   date: none,
   cols: 1,
-  margin: (inside: 2.5cm, outside: 1.5cm, top: 4.5cm, bottom: 2.5cm),
+  margin: (inside: 2.5cm, outside: 1.5cm, top: 4.0cm, bottom: 2.5cm),
   paper: "a4",
   lang: "en",
   region: "AU",
@@ -53,7 +53,8 @@
         [],[],[],[],[],[],
         [],[],[],[],[],[],
       )
-    ]
+    ],
+    header-ascent: 10%,
   )
   set par(justify: true)
   set text(lang: lang,

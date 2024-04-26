@@ -2,6 +2,7 @@
 title: Some Calculation
 format:
   engformat-typst:
+    company: Some Company
     proj_no: 24xxx
     calc_no: 24xxx-ST-CAL-0001
     proj_title: Some Project
@@ -21,7 +22,19 @@ format:
       rev_check: B. Engineer
       rev_app: C. Engineer
     - rev_no: B
-      rev_date: 24/04/2024
+      rev_date: 25/04/2024
+      rev_desc: More preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+    - rev_no: C
+      rev_date: 26/04/2024
+      rev_desc: More preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+    - rev_no: D
+      rev_date: 27/04/2024
       rev_desc: More preliminary
       rev_prep: A. Engineer
       rev_check: B. Engineer
@@ -63,15 +76,6 @@ Document key calculation assumptions here. Generally just repeat the assumptions
 Some holds here
 
 
-| Revision |  Date  |  Description  |  Prepared  |  Checked  | Approved|
-|----------|--------|---------------|------------|-----------|-----------|
-|    A     | 24/04/2024| Preliminary|A. Engineer |B. Engineer|C. Engineer|
-|          |        |               |            |           |           |
-|          |        |               |            |           |           |
-:Revisions {#tbl-revisions, .striped}
-
-_This calculation was prepared by \<SOME ENG COMPANY\> pursuant to the Engineering Services Contract <Contract> between \<SOME ENG COMPANY\> and \<CLIENT\> in connection with the services for \<PROJECT TITLE\>_
-
 {{< pagebreak >}}
 
 ```{=typst}
@@ -103,5 +107,17 @@ _This calculation was prepared by \<SOME ENG COMPANY\> pursuant to the Engineeri
 # Appendix B
 
 ```{=typst}
-#lorem(1000)
+#lorem(80)
+
+#lorem(70)
+
+#lorem(60)
+
+#lorem(80)
+
+#lorem(50)
+
+#lorem(80)
+
+#lorem(30)
 ```

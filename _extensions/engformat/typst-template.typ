@@ -14,6 +14,33 @@
   if logo_path != none {[#image(logo_path)]} else {[]}
 }
 
+#let rev_table(max_items: 3, data) = {
+  // Build a revision table for the footer.
+  // If no. revisions > max_items only max_items-1 will be shown
+  
+  data = data.rev()
+  // rev_data comes in last to first, but rev table in footer is
+  // latest on top.
+
+  if data.len() > max_items {
+    data = data.slice(0, max_items)
+  }
+
+  for rev in data{
+      (
+        rev.rev_no,
+        rev.rev_date,
+        rev.rev_desc,
+        rev.rev_prep,
+        rev.rev_check,
+        rev.rev_app,)
+    }
+}
+
+#let disclaimer = [
+  _This calculation was prepared by SOME ENG COMPANY pursuant to the Engineering Services Contract between SOME ENG COMPANY and CLIENT in connection with the services for PROJECT TITLE_
+  ]
+
 #let engformat(
   title: none,
   authors: none,
@@ -27,7 +54,7 @@
   rev_data: none,
 
   cols: 1,
-  margin: (inside: 2.5cm, outside: 1.5cm, top: 4.5cm, bottom: 2.5cm),
+  margin: (inside: 2.5cm, outside: 1.5cm, top: 4.5cm, bottom: 3.5cm),
   paper: "a4",
   lang: "en",
   region: "AU",
@@ -53,13 +80,74 @@
     paper: paper,
     margin: margin,
     numbering: "1",
-    footer: [
-      #box(width:100%, stroke: (top: 1pt), outset:(top: 6pt))[
-        #set align(right)
-        #set text(size: 9pt)
-        #counter(page).display("1 of 1", both:true)
-      ]
+    footer: context [
+      #if counter(page).get().first() !=1 {
+        [
+          #box(width:100%, stroke: (top: 1pt), outset:(top: 6pt)) 
+          #set align(right)
+          #set text(size: 9pt)
+          #counter(page).display("1 of 1", both:true)
+        ]
+      } else {
+        set text(size: 8pt)
+        table(
+          columns: (1fr,2fr,6fr,3fr,3fr,3fr,),
+          table.header(
+            table.cell(
+              fill: black,
+              text(
+                fill: white,
+                weight: "bold",
+                [*Rev.*]
+              )
+            ),
+            table.cell(
+              fill: black,
+              text(
+                fill: white,
+                weight: "bold",
+                [*Date*]
+              )
+            ),
+            table.cell(
+              fill: black,
+              text(
+                fill: white,
+                weight: "bold",
+                [*Description*]
+              )
+            ),
+            table.cell(
+              fill: black,
+              text(
+                fill: white,
+                weight: "bold",
+                [*Prepared*]
+              )
+            ),
+            table.cell(
+              fill: black,
+              text(
+                fill: white,
+                weight: "bold",
+                [*Checked*]
+              )
+            ),
+            table.cell(
+              fill: black,
+              text(
+                fill: white,
+                weight: "bold",
+                [*Approved*]
+              )
+            )
+            ),
+            ..rev_table(rev_data)
+          )
+        disclaimer
+      }
     ],
+    footer-descent: 0%,
     header: [
       #set text(size: 8pt)
       #table(
@@ -81,10 +169,10 @@
           stroke: (left: (thickness: 0pt)
             )
           )[#logo(logo_path:logo_client)],
-        [*Project Title*],table.cell(colspan:3)[#proj_title],[*Project No.*],[#proj_no],
-        [*Client*],table.cell(colspan:3)[#client],[*Calculation No.*],[#calc_no],
-        [*Calculation Title*],table.cell(colspan:3)[#title],[*Revision*],[#rev_data.last().rev_no],
-        [*Project Phase*],table.cell(colspan:3)[#proj_phase],[*Date*],[#rev_data.last().rev_date],
+        [*Project Title*],table.cell(colspan:3)[#proj_title],[*Project No.*],table.cell(align: right)[#proj_no],
+        [*Client*],table.cell(colspan:3)[#client],[*Calculation No.*],table.cell(align: right)[#calc_no],
+        [*Calculation Title*],table.cell(colspan:3)[#title],[*Revision*],table.cell(align: right)[#rev_data.last().rev_no],
+        [*Project Phase*],table.cell(colspan:3)[#proj_phase],[*Date*],table.cell(align: right)[#rev_data.last().rev_date],
       )
     ],
     header-ascent: 10%,

@@ -2,10 +2,17 @@
 title: Some Calculation
 format:
   engformat-typst:
-    company: Some company
     proj_no: 24xxx
+    calc_no: 24xxx-ST-CAL-0001
     proj_title: Some Project
     client: Some Client
+    proj_phase: Detailed Design
+# provide logos for the company (top LHS of header) and optionally the client (top RHS)
+# Note that using _ in the file names appears to give errors.
+    logo_company: "logo-company.jpg"
+    logo_client: "logo-client.jpg"
+
+  # provide a list of revisions, in descedending order (e.g. add new revisions at the bottom)
     revisions:
     - rev_no: A
       rev_date: 24/04/2024
@@ -19,10 +26,6 @@ format:
       rev_prep: A. Engineer
       rev_check: B. Engineer
       rev_app: C. Engineer
-# provide logos for the company (top LHS of header) and optionally the client (top RHS)
-# Note that using _ in the file names appears to give errors.
-    logo_company: "logo-company.jpg"
-    logo_client: "logo-client.jpg"
 ---
 
 ```{=typst}

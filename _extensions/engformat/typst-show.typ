@@ -27,9 +27,34 @@ $endif$
 $endfor$
     ),
 $endif$
-$if(date)$
-  date: [$date$],
+
+$if(proj_no)$
+  proj_no: [$proj_no$],
 $endif$
+
+$if(calc_no)$
+  calc_no: [$calc_no$],
+$endif$
+
+$if(proj_title)$
+  proj_title: [$proj_title$],
+$endif$
+
+$if(client)$
+  client: [$client$],
+$endif$
+
+$if(proj_phase)$
+  proj_phase: [$proj_phase$],
+$endif$
+
+$if(logo_company)$
+  logo_company: "$logo_company$",
+  $endif$
+$if(logo_client)$
+  logo_client: "$logo_client$",
+  $endif$
+
 $if(lang)$
   lang: "$lang$",
 $endif$
@@ -58,11 +83,5 @@ $if(toc)$
   toc: $toc$,
 $endif$
   cols: $if(columns)$$columns$$else$1$endif$,
-$if(logo_company)$
-  logo_company: "$logo_company$",
-  $endif$
-$if(logo_client)$
-  logo_client: "$logo_client$",
-  $endif$
   doc,
 )

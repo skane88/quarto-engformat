@@ -55,6 +55,21 @@ $if(logo_client)$
   logo_client: "$logo_client$",
   $endif$
 
+$if(revisions)$
+  rev_data: (
+  $for(revisions)$
+  (
+      rev_no: [$revisions.rev_no$],
+      rev_date: [$revisions.rev_date$],
+      rev_desc: [$revisions.preliminary$],
+      rev_prep: [$revisions.rev_prep$],
+      rev_check: [$revisions.rev_check$],
+      rev_app: [$revisions.rev_app$],
+  ),
+  $endfor$
+  ),
+$endif$
+
 $if(lang)$
   lang: "$lang$",
 $endif$

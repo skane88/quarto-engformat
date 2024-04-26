@@ -24,6 +24,7 @@
   proj_phase: none,
   logo_company: none,
   logo_client: none,
+  rev_data: none,
 
   cols: 1,
   margin: (inside: 2.5cm, outside: 1.5cm, top: 4.5cm, bottom: 2.5cm),
@@ -36,6 +37,18 @@
   toc: false,
   doc
   ) = {
+
+    if rev_data == none {
+      let rev_data = (
+        rev_no: none,
+        rev_date: none,
+        rev_desc: none,
+        rev_prep: none,
+        rev_check: none,
+        rev_app: none,
+      )
+    }
+
     set page(
     paper: paper,
     margin: margin,
@@ -70,8 +83,8 @@
           )[#logo(logo_path:logo_client)],
         [*Project Title*],table.cell(colspan:3)[#proj_title],[*Project No.*],[#proj_no],
         [*Client*],table.cell(colspan:3)[#client],[*Calculation No.*],[#calc_no],
-        [*Calculation Title*],table.cell(colspan:3)[#title],[*Revision*],[],
-        [*Project Phase*],table.cell(colspan:3)[#proj_phase],[*Date*],[],
+        [*Calculation Title*],table.cell(colspan:3)[#title],[*Revision*],[#rev_data.last().rev_no],
+        [*Project Phase*],table.cell(colspan:3)[#proj_phase],[*Date*],[#rev_data.last().rev_date],
       )
     ],
     header-ascent: 5%,

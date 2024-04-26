@@ -28,6 +28,10 @@ $endfor$
     ),
 $endif$
 
+$if(company)$
+  company: [$company$],
+$endif$
+
 $if(proj_no)$
   proj_no: [$proj_no$],
 $endif$

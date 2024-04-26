@@ -37,13 +37,15 @@
     }
 }
 
-#let disclaimer = [
-  _This calculation was prepared by SOME ENG COMPANY pursuant to the Engineering Services Contract between SOME ENG COMPANY and CLIENT in connection with the services for PROJECT TITLE_
-  ]
+#let disclaimer(company: "COMPANY", client: "CLIENT", proj_title: "SOME PROJECT") = {
+  text([This calculation was prepared by ] + company + [ pursuant to the Engineering Services Contract between ] + company + [ and ] + client + [ in connection with the services for ] + proj_title)
+}
 
 #let engformat(
   title: none,
   authors: none,
+  
+  company: none,
   proj_no: none,
   calc_no: none,
   proj_title: none,
@@ -144,7 +146,7 @@
             ),
             ..rev_table(rev_data)
           )
-        disclaimer
+        disclaimer(company: company, client: client, proj_title: proj_title)
       }
     ],
     footer-descent: 0%,

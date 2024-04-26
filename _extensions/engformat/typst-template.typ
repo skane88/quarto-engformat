@@ -17,7 +17,14 @@
 #let engformat(
   title: none,
   authors: none,
-  date: none,
+  proj_title: none,
+  proj_no: none,
+  proj_phase: none,
+  client: none,
+  calc_no: none,
+  logo_company: none,
+  logo_client: none,
+
   cols: 1,
   margin: (inside: 2.5cm, outside: 1.5cm, top: 4.5cm, bottom: 2.5cm),
   paper: "a4",
@@ -27,8 +34,6 @@
   fontsize: 10pt,
   sectionnumbering: "1.1",
   toc: false,
-  logo_company: none,
-  logo_client: none,
   doc
   ) = {
     set page(
@@ -63,10 +68,10 @@
           stroke: (left: (thickness: 0pt)
             )
           )[#logo(logo_path:logo_client)],
-        [*Project Title*],table.cell(colspan:3)[],[*Project No.*],[],
-        [*Client*],table.cell(colspan:3)[],[*Calculation No.*],[],
-        [*Calculation Title*],table.cell(colspan:3)[],[*Revision*],[],
-        [*Project Phase*],table.cell(colspan:3)[],[*Date*],[],
+        [*Project Title*],table.cell(colspan:3)[],[*Project No.*],[#proj_no],
+        [*Client*],table.cell(colspan:3)[#client],[*Calculation No.*],[#calc_no],
+        [*Calculation Title*],table.cell(colspan:3)[#title],[*Revision*],[],
+        [*Project Phase*],table.cell(colspan:3)[#proj_phase],[*Date*],[],
       )
     ],
     header-ascent: 5%,

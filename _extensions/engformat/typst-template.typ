@@ -19,7 +19,7 @@
   authors: none,
   date: none,
   cols: 1,
-  margin: (inside: 2.5cm, outside: 1.5cm, top: 4.0cm, bottom: 2.5cm),
+  margin: (inside: 2.5cm, outside: 1.5cm, top: 4.5cm, bottom: 2.5cm),
   paper: "a4",
   lang: "en",
   region: "AU",
@@ -37,24 +37,39 @@
     numbering: "1",
     footer: [
       #box(width:100%, stroke: (top: 1pt), outset:(top: 6pt))[
-        #set align(center)
+        #set align(right)
         #set text(size: 9pt)
         #counter(page).display("1 of 1", both:true)
       ]
     ],
     header: [
+      #set text(size: 8pt)
       #table(
         columns: 6*(1fr,),
         rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
-        table.cell(align: center, inset: 2pt)[#logo(logo_path:logo_company)],
-        table.cell(colspan:4, align: center + horizon)[#text(size: 28pt)[*CALCULATION SHEET*]],
-        table.cell(align: center, inset: 2pt)[#logo(logo_path:logo_client)],
-        [],[],[],[],[],[],
-        [],[],[],[],[],[],
-        [],[],[],[],[],[],
+        table.cell(
+          align: center,
+          inset: 2pt,
+          stroke: (right: (thickness: 0pt)
+            )
+          )[#logo(logo_path:logo_company)],
+        table.cell(
+          colspan:4,
+          align: center + horizon
+          )[#text(size: 28pt)[*CALCULATION SHEET*]],
+        table.cell(
+          align: center,
+          inset: 2pt,
+          stroke: (left: (thickness: 0pt)
+            )
+          )[#logo(logo_path:logo_client)],
+        [*Project Title*],table.cell(colspan:3)[],[*Project No.*],[],
+        [*Client*],table.cell(colspan:3)[],[*Calculation No.*],[],
+        [*Calculation Title*],table.cell(colspan:3)[],[*Revision*],[],
+        [*Project Phase*],table.cell(colspan:3)[],[*Date*],[],
       )
     ],
-    header-ascent: 10%,
+    header-ascent: 5%,
   )
   set par(justify: true)
   set text(lang: lang,

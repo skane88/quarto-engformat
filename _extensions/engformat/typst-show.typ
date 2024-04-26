@@ -59,14 +59,10 @@ $if(toc)$
 $endif$
   cols: $if(columns)$$columns$$else$1$endif$,
 $if(logo_company)$
-  logo_company: $logo_company$,
-  $else$
-  logo_company: "\\_extensions\\engformat\\logo_company.jpg",
+  logo_company: "$logo_company$",
   $endif$
 $if(logo_client)$
-  logo_client: $logo_client$,
-  $else$
-  logo_client: "\\_extensions\\engformat\\logo_client.jpg",
+  logo_client: "$logo_client$",
   $endif$
   doc,
 )

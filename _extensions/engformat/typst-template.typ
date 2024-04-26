@@ -11,7 +11,7 @@
 //   - https://github.com/typst/templates
 
 #let logo(logo_path:none) = {
-  if logo_path != none {[#image(logo_path)]} else {[*NO LOGO*]}
+  if logo_path != none {[#image(logo_path)]} else {[]}
 }
 
 #let engformat(

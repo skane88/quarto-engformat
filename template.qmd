@@ -19,6 +19,7 @@ format:
       rev_prep: A. Engineer
       rev_check: B. Engineer
       rev_app: C. Engineer
+    logo_company: "logo-company.jpg"
 ---
 
 ```{=typst}

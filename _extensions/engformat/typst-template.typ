@@ -56,7 +56,7 @@
   rev_data: none,
 
   cols: 1,
-  margin: (inside: 2.5cm, outside: 1.5cm, top: 4.5cm, bottom: 3.5cm),
+  margin: (inside: 2.5cm, outside: 1.5cm, top: 5cm, bottom: 2cm),
   paper: "a4",
   lang: "en",
   region: "AU",
@@ -90,9 +90,65 @@
           #set text(size: 9pt)
           #counter(page).display("1 of 1", both:true)
         ]
-      } else {
-        set text(size: 8pt)
-        table(
+      }
+    ],
+    footer-descent: 0%,
+    header: [
+      #set text(size: 8pt)
+      #table(
+        columns: 6*(1fr,),
+        rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
+        fill: none,
+        table.cell(
+          align: center,
+          inset: 2pt,
+          stroke: (right: (thickness: 0pt)
+            )
+          )[#logo(logo_path:logo_company)],
+        table.cell(
+          colspan:4,
+          align: center + horizon
+          )[#text(size: 28pt)[*CALCULATION SHEET*]],
+        table.cell(
+          align: center,
+          inset: 2pt,
+          stroke: (left: (thickness: 0pt)
+            )
+          )[#logo(logo_path:logo_client)],
+        [*Project Title*],table.cell(colspan:3)[#proj_title],[*Project No.*],table.cell(align: right)[#proj_no],
+        [*Client*],table.cell(colspan:3)[#client],[*Calculation No.*],table.cell(align: right)[#calc_no],
+        [*Calculation Title*],table.cell(colspan:3)[#title],[*Revision*],table.cell(align: right)[#rev_data.last().rev_no],
+        [*Project Phase*],table.cell(colspan:3)[#proj_phase],[*Date*],table.cell(align: right)[#rev_data.last().rev_date],
+      )
+    ],
+    header-ascent: 10%,
+  )
+  set par(justify: true)
+  set text(lang: lang,
+           region: region,
+           font: font,
+           size: fontsize)
+  set heading(numbering: sectionnumbering)
+  
+  // format heading 1 differently from the rest.
+  show heading.where(
+    level: 1
+  ): it => {
+    block(width: 100%)[
+      #box(width: 100%, stroke: (bottom:1pt), outset: (bottom: .5em))[
+      #set text(weight: "light", size: 17pt)
+      #counter(heading).display(it.numbering) #smallcaps(it.body)]
+      #v(0.5em)
+    ]
+  }
+
+  
+  place(
+    bottom,
+    float: true,
+    [
+      #set text(size: 8pt)
+      #table(
           columns: (1fr,2fr,6fr,3fr,3fr,3fr,),
           table.header(
             table.cell(
@@ -140,63 +196,16 @@
               text(
                 fill: white,
                 weight: "bold",
-                [*Approved*]
+               [*Approved*]
               )
             )
             ),
             ..rev_table(rev_data)
           )
-        disclaimer(company: company, client: client, proj_title: proj_title)
-      }
-    ],
-    footer-descent: 0%,
-    header: [
-      #set text(size: 8pt)
-      #table(
-        columns: 6*(1fr,),
-        rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
-        table.cell(
-          align: center,
-          inset: 2pt,
-          stroke: (right: (thickness: 0pt)
-            )
-          )[#logo(logo_path:logo_company)],
-        table.cell(
-          colspan:4,
-          align: center + horizon
-          )[#text(size: 28pt)[*CALCULATION SHEET*]],
-        table.cell(
-          align: center,
-          inset: 2pt,
-          stroke: (left: (thickness: 0pt)
-            )
-          )[#logo(logo_path:logo_client)],
-        [*Project Title*],table.cell(colspan:3)[#proj_title],[*Project No.*],table.cell(align: right)[#proj_no],
-        [*Client*],table.cell(colspan:3)[#client],[*Calculation No.*],table.cell(align: right)[#calc_no],
-        [*Calculation Title*],table.cell(colspan:3)[#title],[*Revision*],table.cell(align: right)[#rev_data.last().rev_no],
-        [*Project Phase*],table.cell(colspan:3)[#proj_phase],[*Date*],table.cell(align: right)[#rev_data.last().rev_date],
-      )
-    ],
-    header-ascent: 10%,
-  )
-  set par(justify: true)
-  set text(lang: lang,
-           region: region,
-           font: font,
-           size: fontsize)
-  set heading(numbering: sectionnumbering)
-  
-  // format heading 1 differently from the rest.
-  show heading.where(
-    level: 1
-  ): it => {
-    block(width: 100%)[
-      #box(width: 100%, stroke: (bottom:1pt), outset: (bottom: .5em))[
-      #set text(weight: "light", size: 17pt)
-      #counter(heading).display(it.numbering) #smallcaps(it.body)]
-      #v(0.5em)
+      #disclaimer(company: company, client: client, proj_title: proj_title)
     ]
-  }
+    )
+  
 
   if cols == 1 {
     doc

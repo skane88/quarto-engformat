@@ -65,7 +65,7 @@ $if(revisions)$
   (
       rev_no: [$revisions.rev_no$],
       rev_date: [$revisions.rev_date$],
-      rev_desc: [$revisions.preliminary$],
+      rev_desc: [$revisions.rev_desc$],
       rev_prep: [$revisions.rev_prep$],
       rev_check: [$revisions.rev_check$],
       rev_app: [$revisions.rev_app$],

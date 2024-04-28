@@ -102,19 +102,39 @@ Some holds here
 
 # Introduction
 
+```{=typst}
+#lorem(50)
+
+#lorem(60)
+```
+
 # Assumptions
+
+TODO
 
 # Drawings
 
+TODO
+
 # Methodology
+
+TODO
 
 # Calculation
 
+TODO
+
 ## Heading 2
+
+TODO
 
 ### Heading 3
 
+TODO
+
 #### Heading 4
+
+TODO
 
 # Appendix A
 
@@ -136,14 +156,4 @@ Some holds here
 #lorem(30)
 
 #lorem(70)
-
-#lorem(60)
-
-#lorem(80)
-
-#lorem(50)
-
-#lorem(80)
-
-#lorem(30)
 ```

@@ -92,7 +92,7 @@
         ]
       }
     ],
-    footer-descent: 0%,
+    footer-descent: 30%,
     header: [
       #set text(size: 8pt)
       #table(

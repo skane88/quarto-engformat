@@ -108,7 +108,7 @@
         table.cell(
           colspan:4,
           align: center + horizon
-          )[#text(size: 28pt)[*CALCULATION SHEET*]],
+          )[#text(size: 28pt, fill: black)[*CALCULATION SHEET*]],
         table.cell(
           align: center,
           inset: 2pt,
@@ -142,6 +142,8 @@
     ]
   }
 
+  show table.cell.where(y: 0): set text(weight: "bold", fill: white)
+  set table(fill: (_, y) => if y == 0 { black })
   
   place(
     bottom,
@@ -151,54 +153,7 @@
       #table(
           columns: (1fr,2fr,6fr,3fr,3fr,3fr,),
           table.header(
-            table.cell(
-              fill: black,
-              text(
-                fill: white,
-                weight: "bold",
-                [*Rev.*]
-              )
-            ),
-            table.cell(
-              fill: black,
-              text(
-                fill: white,
-                weight: "bold",
-                [*Date*]
-              )
-            ),
-            table.cell(
-              fill: black,
-              text(
-                fill: white,
-                weight: "bold",
-                [*Description*]
-              )
-            ),
-            table.cell(
-              fill: black,
-              text(
-                fill: white,
-                weight: "bold",
-                [*Prepared*]
-              )
-            ),
-            table.cell(
-              fill: black,
-              text(
-                fill: white,
-                weight: "bold",
-                [*Checked*]
-              )
-            ),
-            table.cell(
-              fill: black,
-              text(
-                fill: white,
-                weight: "bold",
-               [*Approved*]
-              )
-            )
+              [*Rev.*], [*Date*], [*Description*], [*Prepared*], [*Checked*], [*Approved*]
             ),
             ..rev_table(rev_data)
           )

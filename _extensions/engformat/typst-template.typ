@@ -63,7 +63,6 @@
   font: ("calibri"),
   fontsize: 10pt,
   sectionnumbering: "1.1",
-  toc: false,
   doc
   ) = {
 
@@ -137,7 +136,7 @@
     block(width: 100%)[
       #box(width: 100%, stroke: (bottom:1pt), outset: (bottom: .5em))[
       #set text(weight: "light", size: 17pt)
-      #counter(heading).display(it.numbering) #smallcaps(it.body)]
+      #smallcaps(it)]
       #v(0.5em)
     ]
   }

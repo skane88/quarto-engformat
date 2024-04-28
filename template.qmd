@@ -73,30 +73,20 @@ Document key calculation assumptions here. Generally just repeat the assumptions
 #like_header("Holds")
 ```
 
-Some holds here
-
-```{=typst}
-#lorem(50)
-
-#lorem(60)
-
-#lorem(50)
-
-#lorem(40)
-
-#lorem(70)
-
-#lorem(40)
-```
-
+* Hold 1
+* Hold 2
+* Hold 3
 
 {{< pagebreak >}}
 
 ```{=typst}
-#like_header("Table Of Contents")
+#block(above: 2em, below: 2em)[
+    #outline(
+      title: [Table of Contents],
+      depth: 1
+    );
+    ]
 ```
-
-#TODO
 
 {{< pagebreak >}}
 

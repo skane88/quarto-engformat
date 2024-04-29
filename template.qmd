@@ -92,7 +92,7 @@ Document key calculation assumptions here. Generally just repeat the assumptions
 
 {{< pagebreak >}}
 
-# Introduction
+# Introduction {#sec-intro}
 
 ## Calculation Objective / Scope
 
@@ -202,6 +202,19 @@ df.head()
 ```
 
 
+:::{#tip-tip .callout-tip title="Tip"}
+This is an example of a callout "tip".
+:::
+
+:::{.callout-warning title="Warning"}
+This is an example of a callout "warning".
+:::
+
+:::{.callout-important title="Important"}
+This is an example of an "important" callout.
+:::
+
+Callouts can even be cross-referenced - see @tip-tip. So can sections - see @sec-intro.
 
 {{< pagebreak >}}
 

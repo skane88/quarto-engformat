@@ -160,14 +160,54 @@ This calculation covers the structural components on the drawings and/or sketche
 {{< pagebreak >}}
 
 # Methodology, Loading and Load Combinations
+Do some calculation here.
 
-TODO
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+a = 1
+b = 2
+a + b
+```
+
+And some text.
+
+And now plot a graph (see @fig-test):
+
+```{python}
+#| label: fig-test
+#| fig-cap: Test Figure
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.plot(x,y)
+```
+
+Woohoo!
+
+And do some data processing with Pandas (see @tbl-test):
+
+```{python}
+#| label: tbl-test
+#| tbl-cap:
+#|   "Test Data"
+
+z = np.cos(x)
+df = pd.DataFrame({"x": x, "y": y, "z": z},)
+
+df.head()
+```
+
+
 
 {{< pagebreak >}}
 
 # Calculation
 
-TODO
+Copy this section as required.
 
 {{< pagebreak >}}
 

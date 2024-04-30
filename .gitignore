@@ -103,11 +103,6 @@ ENV/
 # Pycharm
 .idea
 
-# Strand7 result files.
-*.LBA
-*.LBL
-*.LSA
-*.LSL
-*.NLA
-*.NLL
-*.SRF
+# Quarto files
+.quarto/
+template_files/

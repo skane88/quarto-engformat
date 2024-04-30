@@ -45,21 +45,5 @@ format:
       rev_check: B. Engineer
       rev_app: C. Engineer
     - rev_no: B
-      rev_date: 25/04/2024
-      rev_desc: More preliminary
-      rev_prep: A. Engineer
-      rev_check: B. Engineer
-      rev_app: C. Engineer
-    - rev_no: C
-      rev_date: 26/04/2024
-      rev_desc: Even More preliminary
-      rev_prep: A. Engineer
-      rev_check: B. Engineer
-      rev_app: C. Engineer
-    - rev_no: D
-      rev_date: 27/04/2024
-      rev_desc: Heaps More preliminary
-      rev_prep: A. Engineer
-      rev_check: B. Engineer
-      rev_app: C. Engineer
+      ...
 ```

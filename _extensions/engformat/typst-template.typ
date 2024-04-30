@@ -38,7 +38,7 @@
 }
 
 #let disclaimer(company: "COMPANY", client: "CLIENT", proj_title: "SOME PROJECT") = {
-  text([This calculation was prepared by ] + company + [ pursuant to the Engineering Services Contract between ] + company + [ and ] + client + [ in connection with the services for ] + proj_title)
+  text([This calculation was prepared by ] + company + [ pursuant to the Engineering Services Contract between ] + company + [ and ] + client + [ in connection with the services for ] + proj_title + [.])
 }
 
 #let engformat(

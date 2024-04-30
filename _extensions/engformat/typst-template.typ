@@ -95,7 +95,7 @@
     header: [
       #set text(size: 8pt)
       #table(
-        columns: 6*(1fr,),
+        columns: (1fr, 3.5fr, 1fr, 1.5fr),
         rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
         table.cell(
@@ -105,7 +105,7 @@
             )
           )[#logo(logo_path:logo_company)],
         table.cell(
-          colspan:4,
+          colspan:2,
           align: center + horizon
           )[#text(size: 28pt, fill: black)[*CALCULATION SHEET*]],
         table.cell(
@@ -114,10 +114,10 @@
           stroke: (left: (thickness: 0pt)
             )
           )[#logo(logo_path:logo_client)],
-        [*Project Title*],table.cell(colspan:3)[#proj_title],[*Project No.*],table.cell(align: right)[#proj_no],
-        [*Client*],table.cell(colspan:3)[#client],[*Calculation No.*],table.cell(align: right)[#calc_no],
-        [*Calculation Title*],table.cell(colspan:3)[#title],[*Revision*],table.cell(align: right)[#rev_data.last().rev_no],
-        [*Project Phase*],table.cell(colspan:3)[#proj_phase],[*Date*],table.cell(align: right)[#rev_data.last().rev_date],
+        [*Project Title*],[#proj_title],[*Project No.*],table.cell(align: right)[#proj_no],
+        [*Client*],[#client],[*Calculation No.*],table.cell(align: right)[#calc_no],
+        [*Calculation Title*],[#title],[*Revision*],table.cell(align: right)[#rev_data.last().rev_no],
+        [*Project Phase*],[#proj_phase],[*Date*],table.cell(align: right)[#rev_data.last().rev_date],
       )
     ],
     header-ascent: 10%,

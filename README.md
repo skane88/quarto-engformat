@@ -9,7 +9,7 @@ quarto use template skane88/quarto-engformat
 ```
 
 This will install the format extension and create an example qmd file
-that you can use as a starting place for your document.
+that you can use as a starting point for your document.
 
 ## Using
 To use the template, the following properties need to be filled out in the .yaml metadata at the front of the document:

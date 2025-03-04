@@ -60,7 +60,7 @@
   paper: "a4",
   lang: "en",
   region: "AU",
-  font: ("calibri"),
+  font: ("arial"),
   fontsize: 10pt,
   sectionnumbering: "1.1",
   doc
@@ -95,7 +95,7 @@
     header: [
       #set text(size: 8pt)
       #table(
-        columns: (1fr, 3.5fr, 1fr, 1.5fr),
+        columns: (1.5fr, 3.5fr, 1.5fr, 1.5fr),
         rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
         table.cell(
@@ -107,7 +107,7 @@
         table.cell(
           colspan:2,
           align: center + horizon
-          )[#text(size: 28pt, fill: black)[*CALCULATION SHEET*]],
+          )[#text(size: 22pt, fill: black, font: ("Verdana"))[*CALCULATION SHEET*]],
         table.cell(
           align: center,
           inset: 2pt,
@@ -135,14 +135,27 @@
   ): it => {
     block(width: 100%)[
       #box(width: 100%, stroke: (bottom:1pt), outset: (bottom: .5em))[
-      #set text(weight: "light", size: 17pt)
+      #set text(weight: "bold", size: 16pt, font: ("Verdana"))
       #smallcaps(it)]
       #v(0.5em)
     ]
   }
 
+  // format heading 2 differently from the rest.
+  show heading.where(
+    level: 2
+  ): it => text(weight: "bold", size: 14pt, font: ("Verdana"), it)
+
+  // format heading 3 differently from the rest.
+  show heading.where(
+    level: 3
+  ): it => text(weight: "bold", size: 12pt, font: ("Verdana"), fill: (rgb("40a9bb")), it)
+
+
   show table.cell.where(y: 0): set text(weight: "bold", fill: white)
-  set table(fill: (_, y) => if y == 0 { black })
+  set table(
+    fill: (_, y) => if y == 0 { rgb("40a9bb")}
+  )
   
   place(
     bottom,
@@ -172,7 +185,7 @@
 #let like_header(it) = {
   v(0.5em)
   box(width: 100%, stroke: (bottom:1pt), outset: (bottom: -2pt))[
-    #set text(weight: "light", size: 17pt)
+    #set text(weight: "bold", size: 16pt, font: ("Verdana"))
     #smallcaps(it)
     #v(0.5em)
   ]

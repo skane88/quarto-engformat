@@ -93,6 +93,12 @@ Document key calculation assumptions here. Generally just repeat the assumptions
 
 {{< pagebreak >}}
 
+# Header 1
+
+## Header 2
+
+### Header 3
+
 # Introduction {#sec-intro}
 
 ## Calculation Objective / Scope
@@ -132,6 +138,7 @@ Unless specifically noted, the design complies with Australian Standards and sel
 ## Other Reference Documents
 
 Other reference documents used in this design include:
+
 * Geotechnical Report
 * Certified Vendor Drawings
 

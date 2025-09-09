@@ -1,0 +1,11 @@
+[project]
+name = "quarto-engformat"
+version = "1.0.0"
+description = "Repository for engineering calculation formats for Typst"
+readme = "README.md"
+dependencies = [
+    "notebook",
+    "numpy",
+    "pandas",
+    "matplotlib",
+]

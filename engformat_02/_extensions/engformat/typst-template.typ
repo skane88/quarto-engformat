@@ -157,6 +157,9 @@
   // format links.
   show link: it => underline(text(fill: rgb("0D79CE"), it))
 
+  // format code.
+  show raw: set text(font: "Roboto Mono")
+
   show table.cell.where(y: 0): set text(weight: "bold", fill: white, font: ("Roboto"))
   set table(
     fill: (_, y) => if y == 0 { rgb("9A1209")},

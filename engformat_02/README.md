@@ -24,10 +24,9 @@ format:
     proj_title: Some Project  # the project number.
     client: Some Client  # the name of the client, for the header and the disclaimer.
     proj_phase: Detailed Design  # The project phase, displayed in the header.
-# provide logos for the company (top LHS of header) and the client (top RHS)
+# provide a logo for the company (LHS of header)
 # Note that using _ in the file names appears to give errors.
     logo_company: "logo-company.jpg" 
-    logo_client: "logo-client.jpg"
 
   # provide a list of revisions, in descending order (e.g. add new revisions at the bottom). Each revision field should include:
   # rev_no: the revision number

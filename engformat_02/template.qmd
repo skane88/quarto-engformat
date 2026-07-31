@@ -8,10 +8,9 @@ format:
     proj_title: Some Project
     client: Some Client
     proj_phase: Detailed Design
-# provide logos for the company (top LHS of header) and optionally the client (top RHS)
+# provide a logo for the company (LHS of header)
 # Note that using _ in the file names appears to give errors.
     logo_company: "logo-company.jpg"
-    logo_client: "logo-client.jpg"
 
   # provide a list of revisions, in descedending order (e.g. add new revisions at the bottom)
     revisions:
@@ -77,7 +76,7 @@ Document key calculation assumptions here. Generally just repeat the assumptions
 
 * Finding 1
 * Finding 2
-* Finding 3
+* Finding ...
 
 {{< pagebreak >}}
 

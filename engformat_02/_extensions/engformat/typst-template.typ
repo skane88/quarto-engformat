@@ -52,7 +52,6 @@
   client: none,
   proj_phase: none,
   logo_company: none,
-  logo_client: none,
   rev_data: none,
 
   cols: 1,
@@ -94,29 +93,17 @@
     footer-descent: 30%,
     header: [
       #set text(size: 8pt, fill: rgb("333333"), font: ("Roboto"))
-      #show table.cell.where(y: 0): set text(fill: rgb("333333"))
+      #show table.cell.where(y: 0): set text(fill: rgb("333333"), weight: "regular", font: ("Roboto"))
       #table(
-        columns: (1.5fr, 3.5fr, 1.5fr, 1.5fr),
-        rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
+        columns: (1.5fr, 1.5fr, 3.5fr, 1.5fr, 1.5fr),
+        rows: (0.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
         stroke: 0.5pt + rgb("333333"),
-        align: (x, y) => if y == 0 { center + horizon } else { left },
+        align: (x, y) => if x == 0 { center + horizon } else { left },
         table.cell(
-          align: center,
+          rowspan: 4,
           inset: 2pt,
-          stroke: (right: (thickness: 0pt)
-            )
           )[#logo(logo_path:logo_company)],
-        table.cell(
-          colspan:2,
-          align: center + horizon
-          )[#text(size: 28pt, weight: "light")[CALCULATION]],
-        table.cell(
-          align: center,
-          inset: 2pt,
-          stroke: (left: (thickness: 0pt)
-            )
-          )[#logo(logo_path:logo_client)],
         [*Project Title*],[#proj_title],[*Project No.*],table.cell(align: right)[#proj_no],
         [*Client*],[#client],[*Calculation No.*],table.cell(align: right)[#calc_no],
         [*Calculation Title*],[#title],[*Revision*],table.cell(align: right)[#rev_data.last().rev_no],

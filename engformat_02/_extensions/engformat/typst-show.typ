@@ -55,9 +55,6 @@ $endif$
 $if(logo_company)$
   logo_company: "$logo_company$",
   $endif$
-$if(logo_client)$
-  logo_client: "$logo_client$",
-  $endif$
 
 $if(revisions)$
   rev_data: (

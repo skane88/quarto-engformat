@@ -139,7 +139,7 @@
     block(width: 100%)[
       #box(width: 100%, stroke: (bottom:1pt + rgb("ce190d")), outset: (bottom: .5em))[
       #set text(weight: "bold", size: 16pt, font: ("Roboto"), fill: (rgb("333333")))
-      #smallcaps(it)]
+      #it]
       #v(0.5em)
     ]
   }
@@ -202,7 +202,7 @@
   v(0.5em)
   box(width: 100%, stroke: (bottom:1pt + rgb("ce190d")), outset: (bottom: -2pt))[
     #set text(weight: "bold", size: 16pt, font: ("Roboto"), fill: (rgb("333333")))
-    #smallcaps(it)
+    #it
     #v(0.5em)
   ]
 }

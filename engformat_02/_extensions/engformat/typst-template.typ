@@ -98,6 +98,7 @@
         columns: (1.5fr, 3.5fr, 1.5fr, 1.5fr),
         rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
+        stroke: rgb("333333"),
         table.cell(
           align: center,
           inset: 2pt,
@@ -107,7 +108,7 @@
         table.cell(
           colspan:2,
           align: center + horizon
-          )[#text(size: 22pt, fill: (rgb("333333")), font: ("Roboto"))[*CALCULATION*]],
+          )[#text(size: 28pt, fill: (rgb("333333")), font: ("Roboto"), weight: "light")[CALCULATION]],
         table.cell(
           align: center,
           inset: 2pt,

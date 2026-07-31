@@ -95,7 +95,7 @@
       #set text(size: 8pt, fill: rgb("333333"), font: ("Roboto"))
       #show table.cell.where(y: 0): set text(fill: rgb("333333"), weight: "regular", font: ("Roboto"))
       #table(
-        columns: (1.5fr, 1.5fr, 3.5fr, 1.5fr, 1.5fr),
+        columns: (2.0fr, 1.5fr, 3.5fr, 1.5fr, 1.5fr),
         rows: (0.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
         stroke: 0.5pt + rgb("333333"),

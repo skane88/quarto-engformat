@@ -84,7 +84,7 @@
     footer: context [
       #if counter(page).get().first() !=1 {
         [
-          #box(width:100%, stroke: (top: 1pt), outset:(top: 6pt)) 
+          #box(width:100%, stroke: (top: 0.5pt + rgb("ce190d")), outset:(top: 6pt))
           #set align(right)
           #set text(size: 9pt)
           #counter(page).display("1 of 1", both:true)
@@ -100,6 +100,7 @@
         rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
         stroke: rgb("333333"),
+        align: (x, y) => if y == 0 { center + horizon } else { left },
         table.cell(
           align: center,
           inset: 2pt,
@@ -153,6 +154,8 @@
     level: 3
   ): it => text(weight: "bold", size: 12pt, font: ("Tinos"), fill: (rgb("9A1209")), it)
 
+  // format links.
+  show link: it => underline(text(fill: rgb("0D79CE"), it))
 
   show table.cell.where(y: 0): set text(weight: "bold", fill: white, font: ("Roboto"))
   set table(

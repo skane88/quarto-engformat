@@ -5,7 +5,7 @@ A custom Typst format for writing engineering calculations that export nicely to
 ## Installing
 
 ```bash
-quarto use template skane88/quarto-engformat
+quarto use template skane88/quarto-engformat/engformat_01
 ```
 
 This will install the format extension and create an example qmd file

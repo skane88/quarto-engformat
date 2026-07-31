@@ -54,21 +54,13 @@ You can learn more about creating custom Typst templates here:
 For actual use, the introduction should be a _brief_ description of the calculation objective and scope and ideally include a picture.
 
 ```{=typst}
-#like_header("Calculation Assumptions")
+#like_header("Key Assumptions")
 ```
 
 Document key calculation assumptions here. Generally just repeat the assumptions from the assumptions tab, but if there are a lot summarise the most important handful.									
 
 * Assumption 1
 * Assumption 2
-* ...
-
-```{=typst}
-#like_header("Software Used")
-```
-
-* MS Excel for calculations
-* Space Gass / Strand7 / RFEM, your packages here....
 * ...
 
 ```{=typst}
@@ -121,7 +113,9 @@ This calculation excludes the following:
 * Design of the process / mechanical function for items where structural design has been completed, e.g. chutes, hoppers
 * Structural design of vendor supplied equipment
 
-## Basis of Design									
+{{< pagebreak >}}
+
+# Basis of Design									
 
 This calculation has been completed in accordance with XXXX. The Basis of Design for this calculation is described in XXXX, with mechanical load data in accordance with the XXXX.
 
@@ -142,19 +136,27 @@ Other reference documents used in this design include:
 * Geotechnical Report
 * Certified Vendor Drawings
 
-{{< pagebreak >}}
+## Client Provided Information
+The following information has been provided by the client:
 
-# Assumptions
+* Something
+* Something else.
 
 ## Holds
 
-## Assumptions
-
-## Relied on Information
-
 {{< pagebreak >}}
 
-# Drawings
+# Work Records
+
+## Design Calculations
+The following design calculations have been relied upon in the preparation of this calculation:
+
+| Doc Number | Title | Revision | Link / Path |
+|---------|----------|----------|----------|
+|26xxx_CAL002|Structural Steel Design|A|[link](https://example.com)|
+|26xxx_CAL003|Foundation Design|A|[link](https://example.com)|
+
+## Output
 This calculation covers the structural components on the drawings and/or sketches listed in the following table:	
 
 |Drawing Number|Drawing Title| Revision |
@@ -167,7 +169,7 @@ This calculation covers the structural components on the drawings and/or sketche
 
 {{< pagebreak >}}
 
-# Methodology, Loading and Load Combinations
+# Loading and Load Combinations
 Do some calculation here.
 
 ```{python}
@@ -223,6 +225,37 @@ This is an example of an "important" callout.
 :::
 
 Callouts can even be cross-referenced - see @tip-tip. So can sections - see @sec-intro.
+
+{{< pagebreak >}}
+
+# Analysis Model
+
+The following figure shows the analysis model:
+
+## Restraints, Releases & Offsets
+The following restraints, releases and offsets have been used:
+
+* All columns assumed to be pinned at base unless otherwise noted.
+* All members assumed to be pinned at their ends unless otherwise noted.
+* Members modelled at their centrelines unless otherwise noted.
+
+## Analysis Method
+The following analysis methods have been used:
+
+* Non-linear static analysis.
+* Linear buckling where required to determine effective lengths for members.
+
+
+## Steel / Concrete Design Assumptions
+The following steel and concrete design assumptions have been used:
+
+* ...
+
+{{< pagebreak >}}
+
+# Summary
+
+Copy this section as required.
 
 {{< pagebreak >}}
 

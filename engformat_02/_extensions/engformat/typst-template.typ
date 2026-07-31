@@ -55,7 +55,7 @@
   rev_data: none,
 
   cols: 1,
-  margin: (inside: 2.5cm, outside: 1.5cm, top: 5cm, bottom: 2cm),
+  margin: (inside: 2.5cm, outside: 1.5cm, top: 4cm, bottom: 2cm),
   paper: "a4",
   lang: "en",
   region: "AU",

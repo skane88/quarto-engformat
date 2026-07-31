@@ -164,6 +164,7 @@
       right: none,
     )
   )
+  set table.hline(stroke: none)
 
   place(
     bottom,

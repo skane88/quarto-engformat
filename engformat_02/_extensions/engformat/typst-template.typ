@@ -99,7 +99,7 @@
         columns: (1.5fr, 3.5fr, 1.5fr, 1.5fr),
         rows: (1.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
-        stroke: rgb("333333"),
+        stroke: 0.5pt + rgb("333333"),
         align: (x, y) => if y == 0 { center + horizon } else { left },
         table.cell(
           align: center,

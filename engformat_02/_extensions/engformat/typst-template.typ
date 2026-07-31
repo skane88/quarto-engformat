@@ -156,7 +156,13 @@
 
   show table.cell.where(y: 0): set text(weight: "bold", fill: white, font: ("Roboto"))
   set table(
-    fill: (_, y) => if y == 0 { rgb("9A1209")}
+    fill: (_, y) => if y == 0 { rgb("9A1209")},
+    stroke: (_, y) => (
+      top: if y <= 1 { none } else { 0.5pt + rgb("848484") },
+      bottom: if y == 0 { none } else { 0.5pt + rgb("848484") },
+      left: none,
+      right: none,
+    )
   )
 
   place(

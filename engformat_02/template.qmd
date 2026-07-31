@@ -1,0 +1,239 @@
+---
+title: Some Calculation
+format:
+  engformat-typst:
+    company: Some Company
+    proj_no: 26xxx
+    calc_no: 26xxx_CAL001
+    proj_title: Some Project
+    client: Some Client
+    proj_phase: Detailed Design
+# provide logos for the company (top LHS of header) and optionally the client (top RHS)
+# Note that using _ in the file names appears to give errors.
+    logo_company: "logo-company.jpg"
+    logo_client: "logo-client.jpg"
+
+  # provide a list of revisions, in descedending order (e.g. add new revisions at the bottom)
+    revisions:
+    - rev_no: A
+      rev_date: 24/04/2026
+      rev_desc: Preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+    - rev_no: B
+      rev_date: 25/04/2026
+      rev_desc: More preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+    - rev_no: C
+      rev_date: 26/04/2026
+      rev_desc: Even More preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+    - rev_no: D
+      rev_date: 27/04/2026
+      rev_desc: Heaps More preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+---
+
+```{=typst}
+#like_header("Calculation Objective / Scope")
+```
+
+This is a Quarto document template (`.qmd`) intended to be used to develop engineering calculations in the format of a typical engineering calculation pad.
+
+You can learn more about creating custom Typst templates here: 
+
+<https://quarto.org/docs/output-formats/typst-custom.html>
+
+For actual use, the introduction should be a _brief_ description of the calculation objective and scope and ideally include a picture.
+
+```{=typst}
+#like_header("Calculation Assumptions")
+```
+
+Document key calculation assumptions here. Generally just repeat the assumptions from the assumptions tab, but if there are a lot summarise the most important handful.									
+
+* Assumption 1
+* Assumption 2
+* ...
+
+```{=typst}
+#like_header("Software Used")
+```
+
+* MS Excel for calculations
+* Space Gass / Strand7 / RFEM, your packages here....
+* ...
+
+```{=typst}
+#like_header("Holds")
+```
+
+* Hold 1
+* Hold 2
+* Hold 3
+
+{{< pagebreak >}}
+
+```{=typst}
+#block(above: 2em, below: 2em)[
+    #outline(
+      title: [Table of Contents],
+      depth: 2,
+      indent: auto
+    );
+    ]
+```
+
+{{< pagebreak >}}
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+# Introduction {#sec-intro}
+
+## Calculation Objective / Scope
+
+This calculation covers the design of the structural steel and foundation for the XXXX.
+
+The structural steel consists of three individual sub-structures isolated to control vibrations. These buildings are all braced framed systems and columns are considered pinned base.
+
+Foundations are either combined or individual spread reinforced concrete footings.
+
+In addition to the main structural framing, the calculation verifies the structural adequacy of:									
+
+* Footings including hold down bolts									
+* Mechanical frames and equipment plinths
+* Associated chute-work and chute supports
+
+## Exclusions
+This calculation excludes the following:
+
+* Design of the process / mechanical function for items where structural design has been completed, e.g. chutes, hoppers
+* Structural design of vendor supplied equipment
+
+## Basis of Design									
+
+This calculation has been completed in accordance with XXXX. The Basis of Design for this calculation is described in XXXX, with mechanical load data in accordance with the XXXX.
+
+## Design Standards and Codes
+Unless specifically noted, the design complies with Australian Standards and selected international standards as listed in the Design Criteria. The following summarises the key standards used in producing this calculation:
+
+* AS 1170.0 - 2002		Structural design actions - Part 0: General principles
+* AS 1170.1 - 2002		Structural design actions - Part 1: Permanent, imposed and other actions
+* AS 1170.2 - 2021		Structural design actions - Part 2: Wind actions
+* AS 1170.4 - 2007		Structural design actions - Part 4: Earthquake Actions in Australia
+* AS 3600 - 2018		Concrete structures
+* AS 4100 - 1998		Steel structures
+
+## Other Reference Documents
+
+Other reference documents used in this design include:
+
+* Geotechnical Report
+* Certified Vendor Drawings
+
+{{< pagebreak >}}
+
+# Assumptions
+
+## Holds
+
+## Assumptions
+
+## Relied on Information
+
+{{< pagebreak >}}
+
+# Drawings
+This calculation covers the structural components on the drawings and/or sketches listed in the following table:	
+
+|Drawing Number|Drawing Title| Revision |
+|---------|----------|----------|
+|0001|General Arrangement|A|
+|0002|Details 1|0|
+|0003|Details 2|C1|
+|0004|Earthworks|x|
+: {tbl-refdwgs tbl-colwidths="[20,70,10]"}
+
+{{< pagebreak >}}
+
+# Methodology, Loading and Load Combinations
+Do some calculation here.
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+a = 1
+b = 2
+a + b
+```
+
+And some text.
+
+And now plot a graph (see @fig-test):
+
+```{python}
+#| label: fig-test
+#| fig-cap: Test Figure
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.plot(x,y)
+```
+
+Woohoo!
+
+And do some data processing with Pandas (see @tbl-test):
+
+```{python}
+#| label: tbl-test
+#| tbl-cap:
+#|   "Test Data"
+
+z = np.cos(x)
+df = pd.DataFrame({"x": x, "y": y, "z": z},)
+
+df.head()
+```
+
+
+:::{#tip-tip .callout-tip title="Tip"}
+This is an example of a callout "tip".
+:::
+
+:::{.callout-warning title="Warning"}
+This is an example of a callout "warning".
+:::
+
+:::{.callout-important title="Important"}
+This is an example of an "important" callout.
+:::
+
+Callouts can even be cross-referenced - see @tip-tip. So can sections - see @sec-intro.
+
+{{< pagebreak >}}
+
+# Calculation
+
+Copy this section as required.
+
+{{< pagebreak >}}
+
+# Appendix A
+
+{{< pagebreak >}}
+
+# Appendix B

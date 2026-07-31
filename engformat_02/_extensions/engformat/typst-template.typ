@@ -165,6 +165,7 @@
     )
   )
   set table.hline(stroke: none)
+  show table: it => align(center, it)
 
   place(
     bottom,

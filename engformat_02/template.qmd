@@ -188,11 +188,9 @@ Structural self weight is applied as an acceleration in the model unless noted o
 ### GFM Flooring
 Floor mesh self weight is assumed to be:
 
-$$
-mass = 50 \, \text{kg/m}^2
+$mass = 50 \, \text{kg/m}^2$
 
-GFM = 0.5 \, \text{kPa}
-$$
+$GFM = mass \times g_{acc} = 0.5 \, \text{kPa}$
 
 Flooring is applied as follows:
 
@@ -200,6 +198,9 @@ Flooring is applied as follows:
 * The actual floor load is then applied as a load combination of 0.5 x the dummy case.
 
 ### GHR Handrails
+Handrails are assumed to be 15kg/m.
+
+$GHR = 15 \text{kg/m} \times g_{acc} = 1.5 \text{kN/m}$
 
 ### GME Mechanical Equipment
 Break into multiple load cases if required.
@@ -209,8 +210,46 @@ Break into multiple load cases if required.
 ### QLL5 Standard Floor Live Load
 
 ### QME Mechanical Equipment Live Load
+Break into multiple load cases if required.
 
 ## Load Combinations
+
+{{< pagebreak >}}
+
+# Analysis Model
+
+The following figure shows the analysis model:
+
+## Restraints, Releases & Offsets
+The following restraints, releases and offsets have been used:
+
+* All columns assumed to be pinned at base unless otherwise noted.
+* All members assumed to be pinned at their ends unless otherwise noted.
+* Members modelled at their centrelines unless otherwise noted.
+
+## Analysis Method
+The following analysis methods have been used:
+
+* Non-linear static analysis.
+* Linear buckling where required to determine effective lengths for members.
+
+
+## Steel / Concrete Design Assumptions
+The following steel and concrete design assumptions have been used:
+
+* ...
+
+{{< pagebreak >}}
+
+# Summary
+
+We have done some awesome calcs.
+
+{{< pagebreak >}}
+
+# Calculation
+
+Copy this section as required.
 
 ## Example Calcs
 Do some calculation here.
@@ -268,43 +307,6 @@ This is an example of an "important" callout.
 :::
 
 Callouts can even be cross-referenced - see @tip-tip. So can sections - see @sec-intro.
-
-{{< pagebreak >}}
-
-# Analysis Model
-
-The following figure shows the analysis model:
-
-## Restraints, Releases & Offsets
-The following restraints, releases and offsets have been used:
-
-* All columns assumed to be pinned at base unless otherwise noted.
-* All members assumed to be pinned at their ends unless otherwise noted.
-* Members modelled at their centrelines unless otherwise noted.
-
-## Analysis Method
-The following analysis methods have been used:
-
-* Non-linear static analysis.
-* Linear buckling where required to determine effective lengths for members.
-
-
-## Steel / Concrete Design Assumptions
-The following steel and concrete design assumptions have been used:
-
-* ...
-
-{{< pagebreak >}}
-
-# Summary
-
-Copy this section as required.
-
-{{< pagebreak >}}
-
-# Calculation
-
-Copy this section as required.
 
 {{< pagebreak >}}
 

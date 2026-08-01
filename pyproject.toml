@@ -9,4 +9,9 @@ dependencies = [
     "pandas",
     "matplotlib",
     "polars>=1.43.1",
+    "ruff>=0.16.1",
 ]
+
+[tool.ruff]
+# Add a custom file extension mapped to Python
+extension = {qmd="markdown"}

@@ -84,8 +84,8 @@
       #if counter(page).get().first() !=1 {
         [
           #box(width:100%, stroke: (top: 0.5pt + rgb("ce190d")), outset:(top: 6pt))
-          #set align(right)
-          #set text(size: 9pt)
+          #set align(if calc.odd(counter(page).get().first()) { right } else { left })
+          #set text(size: 8pt)
           #counter(page).display("1 of 1", both:true)
         ]
       }

@@ -191,7 +191,7 @@ And now plot a graph (see @fig-test):
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
 
-plt.plot(x,y)
+plt.plot(x, y)
 ```
 
 Woohoo!
@@ -204,7 +204,9 @@ And do some data processing with Pandas (see @tbl-test):
 #|   "Test Data"
 
 z = np.cos(x)
-df = pd.DataFrame({"x": x, "y": y, "z": z},)
+df = pd.DataFrame(
+    {"x": x, "y": y, "z": z},
+)
 
 df.head()
 ```

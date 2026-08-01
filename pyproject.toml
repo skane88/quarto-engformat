@@ -8,4 +8,5 @@ dependencies = [
     "numpy",
     "pandas",
     "matplotlib",
+    "polars>=1.43.1",
 ]

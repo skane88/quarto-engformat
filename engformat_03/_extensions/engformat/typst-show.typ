@@ -32,12 +32,20 @@ $if(company)$
   company: [$company$],
 $endif$
 
-$if(proj_no)$
-  proj_no: [$proj_no$],
+$if(proj_number)$
+  proj_number: [$proj_number$],
+$endif$
+
+$if(proj_name)$
+  proj_name: [$proj_name$],
 $endif$
 
 $if(calc_no)$
   calc_no: [$calc_no$],
+$endif$
+
+$if(calc_title)$
+  calc_title: [$calc_title$],
 $endif$
 
 $if(proj_title)$

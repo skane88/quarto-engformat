@@ -3,7 +3,7 @@ title: Some Calculation  # this is the title of the calculation document
 format:
   engformat-typst:
     proj_name: Some Project # The project name, displayed in the header.
-    proj_no: R24xxx  # the project number, displayed in the header.
+    proj_number: R24xxx  # the project number, displayed in the header.
     calc_no: R24xxx_CAL001  # the calculation number, used in the header.
     calc_title: Some Project  # the calculation title, used in the header.
 # provide a logo for the company (LHS of header)

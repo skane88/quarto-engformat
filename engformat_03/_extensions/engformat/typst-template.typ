@@ -46,8 +46,10 @@
   authors: none,
   
   company: none,
-  proj_no: none,
+  proj_number: none,
+  proj_name: none,
   calc_no: none,
+  calc_title: none,
   proj_title: none,
   client: none,
   proj_phase: none,
@@ -95,19 +97,20 @@
       #set text(size: 8pt, fill: rgb("333333"), font: ("Roboto"))
       #show table.cell.where(y: 0): set text(fill: rgb("333333"), weight: "regular", font: ("Roboto"))
       #table(
-        columns: (2.0fr, 1.5fr, 3.5fr, 1.5fr, 1.5fr),
-        rows: (0.5cm, 0.5cm, 0.5cm, 0.5cm),
+        columns: (2.0fr, 1.9fr, 3.1fr, 1.5fr, 1.5fr),
+        rows: (0.5cm, 0.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
         stroke: 0.5pt + rgb("333333"),
         align: (x, y) => if x == 0 { center + horizon } else { left },
         table.cell(
-          rowspan: 4,
+          rowspan: 5,
           inset: 2pt,
           )[#logo(logo_path:logo_company)],
-        [*Project Title*],[#proj_title],[*Project No.*],table.cell(align: right)[#proj_no],
-        [*Client*],[#client],[*Calculation No.*],table.cell(align: right)[#calc_no],
-        [*Calculation Title*],[#title],[*Revision*],table.cell(align: right)[#rev_data.last().rev_no],
-        [*Project Phase*],[#proj_phase],[*Date*],table.cell(align: right)[#rev_data.last().rev_date],
+        table.cell(colspan: 4)[*Design Development Plan Form*],
+        [*Project Name*],table.cell(colspan: 3)[#proj_name],
+        [*Project Number*],table.cell(colspan: 3)[#proj_number],
+        [*Document Author*],table.cell(colspan: 3)[#rev_data.last().rev_prep],
+        [*File Name*],[#calc_no #calc_title],[*Issued Date*],table.cell(align: right)[#rev_data.last().rev_date],
       )
     ],
     header-ascent: 10%,

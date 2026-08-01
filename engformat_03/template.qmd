@@ -1,0 +1,352 @@
+---
+title: Some Calculation  # this is the title of the calculation document
+format:
+  engformat-typst:
+    proj_name: Some Project # The project name, displayed in the header.
+    proj_no: R24xxx  # the project number, displayed in the header.
+    calc_no: R24xxx_CAL001  # the calculation number, used in the header.
+    calc_title: Some Project  # the calculation title, used in the header.
+# provide a logo for the company (LHS of header)
+# Note that using _ in the file names appears to give errors.
+    logo_company: "logo-company.jpg" 
+
+  # provide a list of revisions, in descedending order (e.g. add new revisions at the bottom)
+    revisions:
+    - rev_no: A
+      rev_date: 24/04/2026
+      rev_desc: Preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+    - rev_no: B
+      rev_date: 25/04/2026
+      rev_desc: More preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+    - rev_no: C
+      rev_date: 26/04/2026
+      rev_desc: Even More preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+    - rev_no: D
+      rev_date: 27/04/2026
+      rev_desc: Heaps More preliminary
+      rev_prep: A. Engineer
+      rev_check: B. Engineer
+      rev_app: C. Engineer
+---
+
+```{=typst}
+#like_header("Calculation Objective / Scope")
+```
+
+This is a Quarto document template (`.qmd`) intended to be used to develop engineering calculations in the format of a typical engineering calculation pad.
+
+You can learn more about creating custom Typst templates here: 
+
+<https://quarto.org/docs/output-formats/typst-custom.html>
+
+For actual use, the introduction should be a _brief_ description of the calculation objective and scope and ideally include a picture.
+
+```{=typst}
+#like_header("Key Assumptions")
+```
+
+Document key calculation assumptions here. Generally just repeat the assumptions from the assumptions tab, but if there are a lot summarise the most important handful.									
+
+* Assumption 1
+* Assumption 2
+* ...
+
+```{=typst}
+#like_header("Holds")
+```
+
+* Hold 1
+* Hold 2
+* Hold 3
+
+```{=typst}
+#like_header("Key Findings")
+```
+
+* Finding 1
+* Finding 2
+* Finding ...
+
+{{< pagebreak >}}
+
+```{=typst}
+#block(above: 2em, below: 2em)[
+    #outline(
+      title: [Table of Contents],
+      depth: 2,
+      indent: auto
+    );
+    ]
+```
+
+{{< pagebreak >}}
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+# Introduction {#sec-intro}
+
+## Calculation Objective / Scope
+
+This calculation covers the design of the structural steel and foundation for the XXXX.
+
+The structural steel consists of three individual sub-structures isolated to control vibrations. These buildings are all braced framed systems and columns are considered pinned base.
+
+Foundations are either combined or individual spread reinforced concrete footings.
+
+In addition to the main structural framing, the calculation verifies the structural adequacy of:									
+
+* Footings including hold down bolts									
+* Mechanical frames and equipment plinths
+* Associated chute-work and chute supports
+
+## Exclusions
+This calculation excludes the following:
+
+* Design of the process / mechanical function for items where structural design has been completed, e.g. chutes, hoppers
+* Structural design of vendor supplied equipment
+
+{{< pagebreak >}}
+
+# Basis of Design									
+
+This calculation has been completed in accordance with XXXX. The Basis of Design for this calculation is described in XXXX, with mechanical load data in accordance with the XXXX.
+
+## Design Standards and Codes
+Unless specifically noted, the design complies with Australian Standards and selected international standards as listed in the Design Criteria. The following summarises the key standards used in producing this calculation:
+
+* AS 1170.0 - 2002		Structural design actions - Part 0: General principles
+* AS 1170.1 - 2002		Structural design actions - Part 1: Permanent, imposed and other actions
+* AS 1170.2 - 2021		Structural design actions - Part 2: Wind actions
+* AS 1170.4 - 2007		Structural design actions - Part 4: Earthquake Actions in Australia
+* AS 3600 - 2018		Concrete structures
+* AS 4100 - 1998		Steel structures
+
+## Other Reference Documents
+
+Other reference documents used in this design include:
+
+* Geotechnical Report
+* Certified Vendor Drawings
+
+## Client Provided Information
+The following information has been provided by the client:
+
+* Something
+* Something else.
+
+## Holds
+
+{{< pagebreak >}}
+
+# Work Records
+
+## Design Calculations
+The following design calculations have been relied upon in the preparation of this calculation:
+
+| Doc Number | Title | Revision | Link / Path |
+|---------|----------|----------|----------|
+|26xxx_CAL002|Structural Steel Design|A|[link](https://example.com)|
+|26xxx_CAL003|Foundation Design|A|[link](https://example.com)|
+
+## Output
+This calculation covers the structural components on the drawings and/or sketches listed in the following table:	
+
+|Drawing Number|Drawing Title| Revision |
+|---------|----------|----------|
+|0001|General Arrangement|A|
+|0002|Details 1|0|
+|0003|Details 2|C1|
+|0004|Earthworks|x|
+: {tbl-refdwgs tbl-colwidths="[20,70,10]"}
+
+{{< pagebreak >}}
+
+# Loads
+This section describes the loads applied.
+
+## Gravity Loads
+Document gravity loads here.
+
+### GSW Structural Self Weight
+Structural self weight is applied as an acceleration in the model unless noted otherwise.
+
+### GFM Flooring
+Floor mesh self weight is assumed to be:
+
+$mass = 50 \, \text{kg/m}^2$
+
+$GFM = mass \times g_{acc} = 0.5 \, \text{kPa}$
+
+Flooring is applied as follows:
+
+* A dummy load case of 1kPa is applied to all floor areas.
+* The actual floor load is then applied as a load combination of 0.5 x the dummy case.
+
+### GHR Handrails
+Handrails are assumed to be 15kg/m.
+
+$GHR = 15 \text{kg/m} \times g_{acc} = 1.5 \text{kN/m}$
+
+### GME Mechanical Equipment
+Break into multiple load cases if required.
+
+## Live Loads
+
+### QLL5 Standard Floor Live Load
+
+### QME Mechanical Equipment Live Load
+Break into multiple load cases if required.
+
+## Load Combinations
+
+{{< pagebreak >}}
+
+# Analysis Model
+
+The following figure shows the analysis model:
+
+## Restraints, Releases & Offsets
+The following restraints, releases and offsets have been used:
+
+* All columns assumed to be pinned at base unless otherwise noted.
+* All members assumed to be pinned at their ends unless otherwise noted.
+* Members modelled at their centrelines unless otherwise noted.
+
+## Analysis Method
+The following analysis methods have been used:
+
+* Non-linear static analysis.
+* Linear buckling where required to determine effective lengths for members.
+
+
+## Steel / Concrete Design Assumptions
+The following steel and concrete design assumptions have been used:
+
+* ...
+
+{{< pagebreak >}}
+
+# Summary
+
+We have done some awesome calcs.
+
+{{< pagebreak >}}
+
+# Calculation
+
+Copy this section as required.
+
+## Example Calcs
+Do some calculation here.
+
+```{python}
+from cycler import cycler
+import numpy as np
+import polars as pl
+import matplotlib.pyplot as plt
+
+a = 1
+b = 2
+a + b
+```
+
+And now plot a graph (see @fig-test):
+
+```{python}
+
+no_points = 101
+jitter_scale = 0.2
+x = np.linspace(0, 2 * np.pi, no_points)
+y1 = np.sin(x) + (np.random.random(no_points) - 0.5) * jitter_scale
+y2 = np.cos(x) + (np.random.random(no_points) - 0.5) * jitter_scale
+y3 = np.sin(x * 2) + (np.random.random(no_points) - 0.5) * jitter_scale
+y4 = np.cos(x * 2) + (np.random.random(no_points) - 0.5) * jitter_scale
+y5 = np.sin(x * 3) + (np.random.random(no_points) - 0.5) * jitter_scale
+y6 = np.cos(x * 3) + (np.random.random(no_points) - 0.5) * jitter_scale
+y7 = np.sin(x * 4) + (np.random.random(no_points) - 0.5) * jitter_scale
+y8 = np.cos(x * 4) + (np.random.random(no_points) - 0.5) * jitter_scale
+```
+
+```{python}
+#| echo: FALSE
+#| label: fig-test
+#| fig-cap: Test Figure
+
+PERSONAL_COLORS = cycler(
+    color=[
+        "#333333",
+        "#CE190D",
+        "#0D79CE",
+        "#FDB813",
+        "#79C99E",
+        "#C69DD2",
+        "#A8C256",
+        "#E8E8E8",
+    ]
+)
+
+plt.gca().set_prop_cycle(PERSONAL_COLORS)
+plt.plot(x, y1, label="y1")
+plt.plot(x, y2, label="y2")
+plt.plot(x, y3, label="y3")
+plt.plot(x, y4, label="y4")
+plt.plot(x, y5, label="y5")
+plt.plot(x, y6, label="y6")
+plt.plot(x, y7, label="y7")
+plt.plot(x, y8, label="y8")
+plt.legend()
+plt.title("Test Figure")
+```
+
+Woohoo!
+
+And do some data processing with Polars (see @tbl-test):
+
+```{python}
+#| label: tbl-test
+#| tbl-cap:
+#|   "Test Data"
+
+df = pl.DataFrame({"x": x, "y": y1, "z": y2})
+
+pl.Config.set_tbl_hide_column_data_types(True)
+pl.Config.set_float_precision(3)
+
+df.head()
+```
+
+
+:::{#tip-tip .callout-tip title="Tip"}
+This is an example of a callout "tip".
+:::
+
+:::{.callout-warning title="Warning"}
+This is an example of a callout "warning".
+:::
+
+:::{.callout-important title="Important"}
+This is an example of an "important" callout.
+:::
+
+Callouts can even be cross-referenced - see @tip-tip. So can sections - see @sec-intro.
+
+{{< pagebreak >}}
+
+# Appendix A
+
+{{< pagebreak >}}
+
+# Appendix B

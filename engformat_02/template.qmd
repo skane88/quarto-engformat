@@ -176,7 +176,43 @@ This calculation covers the structural components on the drawings and/or sketche
 
 {{< pagebreak >}}
 
-# Loading and Load Combinations
+# Loads
+This section describes the loads applied.
+
+## Gravity Loads
+Document gravity loads here.
+
+### GSW Structural Self Weight
+Structural self weight is applied as an acceleration in the model unless noted otherwise.
+
+### GFM Flooring
+Floor mesh self weight is assumed to be:
+
+$$
+mass = 50 \, \text{kg/m}^2
+
+GFM = 0.5 \, \text{kPa}
+$$
+
+Flooring is applied as follows:
+
+* A dummy load case of 1kPa is applied to all floor areas.
+* The actual floor load is then applied as a load combination of 0.5 x the dummy case.
+
+### GHR Handrails
+
+### GME Mechanical Equipment
+Break into multiple load cases if required.
+
+## Live Loads
+
+### QLL5 Standard Floor Live Load
+
+### QME Mechanical Equipment Live Load
+
+## Load Combinations
+
+## Example Calcs
 Do some calculation here.
 
 ```{python}

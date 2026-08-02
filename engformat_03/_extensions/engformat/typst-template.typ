@@ -14,21 +14,14 @@
   if logo_path != none {[#image(logo_path)]} else {[]}
 }
 
-#let disclaimer(company: "COMPANY", client: "CLIENT", proj_title: "SOME PROJECT") = {
-  text([This calculation was prepared by ] + company + [ pursuant to the Engineering Services Contract between ] + company + [ and ] + client + [ in connection with the services for ] + proj_title + [.])
-}
-
 #let engformat(
   title: none,
   authors: none,
-  
-  company: none,
+
   proj_number: none,
   proj_name: none,
   calc_no: none,
   calc_title: none,
-  proj_title: none,
-  client: none,
   proj_phase: none,
   logo_company: none,
   rev_data: none,
@@ -153,7 +146,6 @@
           [#text(weight: "regular")[#rev_data.last().rev_app]],
           [#text(weight: "regular")[#rev_data.last().rev_date]],
           )
-      #disclaimer(company: company, client: client, proj_title: proj_title)
     ]
     )
   

@@ -28,10 +28,6 @@ $endfor$
     ),
 $endif$
 
-$if(company)$
-  company: [$company$],
-$endif$
-
 $if(proj_number)$
   proj_number: [$proj_number$],
 $endif$
@@ -46,14 +42,6 @@ $endif$
 
 $if(calc_title)$
   calc_title: [$calc_title$],
-$endif$
-
-$if(proj_title)$
-  proj_title: [$proj_title$],
-$endif$
-
-$if(client)$
-  client: [$client$],
 $endif$
 
 $if(proj_phase)$

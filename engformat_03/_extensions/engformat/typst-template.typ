@@ -55,14 +55,19 @@
     footer: context [
       #if counter(page).get().first() !=1 {
         [
-          #box(width:100%, stroke: (top: 0.5pt + rgb("ce190d")), outset:(top: 6pt))
-          #set align(if calc.odd(counter(page).get().first()) { right } else { left })
-          #set text(size: 8pt)
-          #counter(page).display("1 of 1", both:true)
+          #set text(font: ("Arial"), size: 10pt, weight: "regular")
+          #show table.cell.where(y: 0): set text(weight: "regular")
+          #table(
+            columns: (1fr, 1fr),
+            fill: none,
+            stroke: (x, y) => (top: if y == 0 { 0.5pt + rgb("3f4042") } else { none }),
+            table.cell(align: left)[ROCKFIELD TECHNOLOGIES AUSTRALIA], table.cell(align: right)[COMMERCIAL IN CONFIDENCE],
+            [], table.cell(align: right)[Page #counter(page).display("1 of 1", both: true)],
+          )
         ]
       }
     ],
-    footer-descent: 30%,
+    footer-descent: 10%,
     header: [
       #set text(size: 8pt, fill: rgb("333333"), font: ("Arial"))
       #show table.cell.where(y: 0): set text(fill: rgb("333333"), weight: "regular", font: ("Arial"))

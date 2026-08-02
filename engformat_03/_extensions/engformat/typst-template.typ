@@ -61,7 +61,7 @@
   paper: "a4",
   lang: "en",
   region: "AU",
-  font: ("tinos"),
+  font: ("Arial"),
   fontsize: 10pt,
   sectionnumbering: "1.1",
   doc
@@ -94,23 +94,22 @@
     ],
     footer-descent: 30%,
     header: [
-      #set text(size: 8pt, fill: rgb("333333"), font: ("Roboto"))
-      #show table.cell.where(y: 0): set text(fill: rgb("333333"), weight: "regular", font: ("Roboto"))
+      #set text(size: 8pt, fill: rgb("333333"), font: ("Arial"))
+      #show table.cell.where(y: 0): set text(fill: rgb("333333"), weight: "regular", font: ("Arial"))
       #table(
         columns: (2.0fr, 1.9fr, 3.1fr, 1.5fr, 1.5fr),
         rows: (0.5cm, 0.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
         stroke: 0.5pt + rgb("333333"),
-        align: (x, y) => if x == 0 { center + horizon } else { left },
+        align: (x, y) => if x == 0 and y == 0 { center + horizon } else { left },
         table.cell(
-          rowspan: 5,
           inset: 2pt,
           )[#logo(logo_path:logo_company)],
         table.cell(colspan: 4)[*Design Development Plan Form*],
-        [*Project Name*],table.cell(colspan: 3)[#proj_name],
-        [*Project Number*],table.cell(colspan: 3)[#proj_number],
-        [*Document Author*],table.cell(colspan: 3)[#rev_data.last().rev_prep],
-        [*File Name*],[#calc_no #calc_title],[*Issued Date*],table.cell(align: right)[#rev_data.last().rev_date],
+        [*Project Name*],table.cell(colspan: 4)[#proj_name],
+        [*Project Number*],table.cell(colspan: 4)[#proj_number],
+        [*Document Author*],table.cell(colspan: 4)[#rev_data.last().rev_prep],
+        [*File Name*],table.cell(colspan: 2)[#calc_no #calc_title],[*Issued Date*],table.cell(align: right)[#rev_data.last().rev_date],
       )
     ],
     header-ascent: 10%,
@@ -128,7 +127,7 @@
   ): it => {
     block(width: 100%)[
       #box(width: 100%, stroke: (bottom:1pt + rgb("ce190d")), outset: (bottom: .5em))[
-      #set text(weight: "bold", size: 16pt, font: ("Roboto"), fill: (rgb("333333")))
+      #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("333333")))
       #it]
       #v(0.5em)
     ]
@@ -137,20 +136,20 @@
   // format heading 2 differently from the rest.
   show heading.where(
     level: 2
-  ): it => text(weight: "bold", size: 14pt, font: ("Roboto"), fill: (rgb("333333")), it)
+  ): it => text(weight: "bold", size: 14pt, font: ("Arial"), fill: (rgb("333333")), it)
 
   // format heading 3 differently from the rest.
   show heading.where(
     level: 3
-  ): it => text(weight: "bold", size: 12pt, font: ("Tinos"), fill: (rgb("9A1209")), it)
+  ): it => text(weight: "bold", size: 12pt, font: ("Arial"), fill: (rgb("9A1209")), it)
 
   // format links.
   show link: it => underline(text(fill: rgb("0D79CE"), it))
 
   // format code.
-  show raw: set text(font: "Roboto Mono")
+  show raw: set text(font: "Arial")
 
-  show table.cell.where(y: 0): set text(weight: "bold", fill: white, font: ("Roboto"))
+  show table.cell.where(y: 0): set text(weight: "bold", fill: white, font: ("Arial"))
   set table(
     fill: (_, y) => if y == 0 { rgb("9A1209")},
     stroke: (_, y) => (
@@ -191,7 +190,7 @@
 #let like_header(it) = {
   v(0.5em)
   box(width: 100%, stroke: (bottom:1pt + rgb("ce190d")), outset: (bottom: -2pt))[
-    #set text(weight: "bold", size: 16pt, font: ("Roboto"), fill: (rgb("333333")))
+    #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("333333")))
     #it
     #v(0.5em)
   ]

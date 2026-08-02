@@ -2,6 +2,7 @@
 title: Some Calculation  # this is the title of the calculation document
 format:
   engformat-typst:
+    company: Some Company # the company name, displayed (in all caps) in the footer.
     proj_name: Some Project # The project name, displayed in the header.
     proj_number: Ryymmxxx  # the project number, displayed in the header.
     calc_no: Ryymmxxx_CAL001  # the calculation number, used in the header.
@@ -38,7 +39,7 @@ format:
       rev_app: D. Engineer
 ---
 
-# Document Purpose
+# Document Purpose {#sec-intro}
 
 This is a Quarto document template (`.qmd`) intended to be used to develop engineering calculations in the format of a typical engineering calculation pad.
 
@@ -241,7 +242,6 @@ a + b
 And now plot a graph (see @fig-test):
 
 ```{python}
-
 no_points = 101
 jitter_scale = 0.2
 x = np.linspace(0, 2 * np.pi, no_points)
@@ -251,8 +251,6 @@ y3 = np.sin(x * 2) + (np.random.random(no_points) - 0.5) * jitter_scale
 y4 = np.cos(x * 2) + (np.random.random(no_points) - 0.5) * jitter_scale
 y5 = np.sin(x * 3) + (np.random.random(no_points) - 0.5) * jitter_scale
 y6 = np.cos(x * 3) + (np.random.random(no_points) - 0.5) * jitter_scale
-y7 = np.sin(x * 4) + (np.random.random(no_points) - 0.5) * jitter_scale
-y8 = np.cos(x * 4) + (np.random.random(no_points) - 0.5) * jitter_scale
 ```
 
 ```{python}
@@ -262,14 +260,12 @@ y8 = np.cos(x * 4) + (np.random.random(no_points) - 0.5) * jitter_scale
 
 PERSONAL_COLORS = cycler(
     color=[
-        "#333333",
-        "#CE190D",
-        "#0D79CE",
-        "#FDB813",
-        "#79C99E",
-        "#C69DD2",
-        "#A8C256",
-        "#E8E8E8",
+        "#228c3d",
+        "#808285",
+        "#f3ab1d",
+        "#9c1421",
+        "#00a3d8",
+        "#004270",
     ]
 )
 
@@ -280,8 +276,6 @@ plt.plot(x, y3, label="y3")
 plt.plot(x, y4, label="y4")
 plt.plot(x, y5, label="y5")
 plt.plot(x, y6, label="y6")
-plt.plot(x, y7, label="y7")
-plt.plot(x, y8, label="y8")
 plt.legend()
 plt.title("Test Figure")
 ```

@@ -18,6 +18,7 @@
   title: none,
   authors: none,
 
+  company: none,
   proj_number: none,
   proj_name: none,
   calc_no: none,
@@ -59,7 +60,7 @@
         columns: (1fr, 1fr),
         fill: none,
         stroke: (x, y) => (top: if y == 0 { 0.5pt + rgb("3f4042") } else { none }),
-        table.cell(align: left)[ROCKFIELD TECHNOLOGIES AUSTRALIA], table.cell(align: right)[COMMERCIAL IN CONFIDENCE],
+        table.cell(align: left)[#upper([#company])], table.cell(align: right)[COMMERCIAL IN CONFIDENCE],
         [], table.cell(align: right)[Page #counter(page).display("1 of 1", both: true)],
       )
     ],
@@ -115,9 +116,6 @@
 
   // format links.
   show link: it => underline(text(fill: rgb("#004270"), it))
-
-  // format code.
-  show raw: set text(font: "Arial")
 
   show table.cell.where(y: 0): set text(weight: "bold", font: ("Arial"))
   set table(

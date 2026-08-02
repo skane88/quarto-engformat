@@ -65,18 +65,17 @@
     ],
     footer-descent: 10%,
     header: [
-      #set text(size: 8pt, fill: rgb("333333"), font: ("Arial"))
-      #show table.cell.where(y: 0): set text(fill: rgb("333333"), weight: "regular", font: ("Arial"))
+      #set text(size: 8pt, font: ("Arial"))
       #table(
         columns: (2.0fr, 1.9fr, 3.1fr, 1.5fr, 1.5fr),
-        rows: (0.5cm, 0.5cm, 0.5cm, 0.5cm, 0.5cm),
+        rows: (1cm, 0.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
-        stroke: 0.5pt + rgb("333333"),
+        stroke: 0.5pt + rgb("3f4042"),
         align: (x, y) => if x == 0 and y == 0 { center + horizon } else { left },
         table.cell(
           inset: 2pt,
           )[#logo(logo_path:logo_company)],
-        table.cell(colspan: 4)[*Design Development Plan Form*],
+        table.cell(colspan: 4)[#text(size: 16pt)[Design Development Plan Form]],
         [*Project Name*],table.cell(colspan: 4)[#proj_name],
         [*Project Number*],table.cell(colspan: 4)[#proj_number],
         [*Document Author*],table.cell(colspan: 4)[#rev_data.last().rev_prep],

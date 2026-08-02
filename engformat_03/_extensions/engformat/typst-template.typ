@@ -53,19 +53,15 @@
     margin: margin,
     numbering: "1",
     footer: context [
-      #if counter(page).get().first() !=1 {
-        [
-          #set text(font: ("Arial"), size: 10pt, weight: "regular")
-          #show table.cell.where(y: 0): set text(weight: "regular")
-          #table(
-            columns: (1fr, 1fr),
-            fill: none,
-            stroke: (x, y) => (top: if y == 0 { 0.5pt + rgb("3f4042") } else { none }),
-            table.cell(align: left)[ROCKFIELD TECHNOLOGIES AUSTRALIA], table.cell(align: right)[COMMERCIAL IN CONFIDENCE],
-            [], table.cell(align: right)[Page #counter(page).display("1 of 1", both: true)],
-          )
-        ]
-      }
+      #set text(font: ("Arial"), size: 10pt, weight: "regular")
+      #show table.cell.where(y: 0): set text(weight: "regular")
+      #table(
+        columns: (1fr, 1fr),
+        fill: none,
+        stroke: (x, y) => (top: if y == 0 { 0.5pt + rgb("3f4042") } else { none }),
+        table.cell(align: left)[ROCKFIELD TECHNOLOGIES AUSTRALIA], table.cell(align: right)[COMMERCIAL IN CONFIDENCE],
+        [], table.cell(align: right)[Page #counter(page).display("1 of 1", both: true)],
+      )
     ],
     footer-descent: 10%,
     header: [
@@ -152,6 +148,7 @@
           [#text(weight: "regular")[#rev_data.last().rev_app]],
           [#text(weight: "regular")[#rev_data.last().rev_date]],
           )
+      #v(1.5em)
     ]
     )
   

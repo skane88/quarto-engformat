@@ -41,19 +41,34 @@ format:
 
 # Document Purpose {#sec-intro}
 
-This is a Quarto document template (`.qmd`) intended to be used to develop engineering calculations in the format of a typical engineering calculation pad.
+This is a Quarto document template (`.qmd`) intended to be used to develop engineering calculations in the format of a typical engineering calculation pad. Now you too can use python in your calculation documents:
 
-To use, install quarto and then run the following command to download the template:
+```{python}
+print("Hello World!")
+```
+
+Also, it produces some of the nicest looking calculation documents that have ever caressed your eyes!
+
+## Instructions
+To use, install ``python`` (or ``R`` or whatever programming language you like!) and ``quarto`` and then run the following command to download the template:
 
 ```bash
 quarto use template skane88/quarto-engformat/engformat_03
 ```
 
+Now just edit in your favourite notebook editor: Jupyter (can use native ``.ipynb`` or use Jupytext to edit ``.qmd`` files), VSCode, RStudio, etc.
+
+For quarto instructions see:
+
+[Quarto Documentation](https://quarto.org/docs/get-started/hello/jupyter.html)
+
 You can learn more about creating custom Typst templates here: 
 
-<https://quarto.org/docs/output-formats/typst-custom.html>
+[Custom Typst Templates](https://quarto.org/docs/output-formats/typst-custom.html)
 
+:::{#tip-intro .callout-tip title="Introductions"}
 For actual use, the introduction should be a _brief_ description of the calculation objective and scope and ideally include a picture.
+:::
 
 {{< pagebreak >}}
 
@@ -160,6 +175,10 @@ $mass = 50 \, \text{kg/m}^2$
 
 $GFM = mass \times g_{acc} = 0.5 \, \text{kPa}$
 
+:::{#tip-eqn .callout-tip title="Symbolic Maths"}
+NOTE: Just because you can use pretty maths in Quarto doesn't mean you should. They take time and effort to type out properly. Prefer using simple python code blocks where possible. If you need to do symbolic maths, consider using ``sympy`` which can symbolically solve equations and output them for you.
+:::
+
 Flooring is applied as follows:
 
 * A dummy load case of 1kPa is applied to all floor areas.
@@ -239,7 +258,7 @@ b = 2
 a + b
 ```
 
-And now plot a graph (see @fig-test):
+And now plot a graph (see @fig-test), with the graph code hidden in a collapsed code cell:
 
 ```{python}
 no_points = 101
@@ -279,6 +298,10 @@ plt.plot(x, y6, label="y6")
 plt.legend()
 plt.title("Test Figure")
 ```
+
+:::{#tip-tipgraph .callout-tip title="Hidden code blocks"}
+Use the ``#| echo: FALSE`` option to hide code blocks and minimise clutter.
+:::
 
 Woohoo!
 

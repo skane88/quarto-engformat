@@ -67,11 +67,11 @@
     header: [
       #set text(size: 8pt, font: ("Arial"))
       #table(
-        columns: (2.0fr, 1.9fr, 3.1fr, 1.5fr, 1.5fr),
+        columns: (2.0fr, 1.10fr, 3.1fr, 1.5fr, 1.5fr),
         rows: (1cm, 0.5cm, 0.5cm, 0.5cm, 0.5cm),
         fill: none,
         stroke: 0.5pt + rgb("3f4042"),
-        align: (x, y) => if x == 0 and y == 0 { center + horizon } else { left },
+        align: (x, y) => (if x == 0 and y == 0 { center } else { left }) + horizon,
         table.cell(
           inset: 2pt,
           )[#logo(logo_path:logo_company)],

@@ -38,43 +38,21 @@ format:
       rev_app: D. Engineer
 ---
 
-```{=typst}
-#like_header("Calculation Objective / Scope")
-```
+# Document Purpose
 
 This is a Quarto document template (`.qmd`) intended to be used to develop engineering calculations in the format of a typical engineering calculation pad.
+
+To use, install quarto and then run the following command to download the template:
+
+```bash
+quarto use template skane88/quarto-engformat/engformat_03
+```
 
 You can learn more about creating custom Typst templates here: 
 
 <https://quarto.org/docs/output-formats/typst-custom.html>
 
 For actual use, the introduction should be a _brief_ description of the calculation objective and scope and ideally include a picture.
-
-```{=typst}
-#like_header("Key Assumptions")
-```
-
-Document key calculation assumptions here. Generally just repeat the assumptions from the assumptions tab, but if there are a lot summarise the most important handful.									
-
-* Assumption 1
-* Assumption 2
-* ...
-
-```{=typst}
-#like_header("Holds")
-```
-
-* Hold 1
-* Hold 2
-* Hold 3
-
-```{=typst}
-#like_header("Key Findings")
-```
-
-* Finding 1
-* Finding 2
-* Finding ...
 
 {{< pagebreak >}}
 
@@ -90,64 +68,24 @@ Document key calculation assumptions here. Generally just repeat the assumptions
 
 {{< pagebreak >}}
 
-# Header 1
+# Basis of Design
 
-## Header 2
+## Design Brief & Client Requirements
 
-### Header 3
+## Design Constraints and Battery Limits
 
-# Introduction {#sec-intro}
+##	Parameters
 
-## Calculation Objective / Scope
+###	Geometry 
 
-This calculation covers the design of the structural steel and foundation for the XXXX.
+###	Material Properties 
 
-The structural steel consists of three individual sub-structures isolated to control vibrations. These buildings are all braced framed systems and columns are considered pinned base.
+##	Design Changes
+##	Governing Standard and Regulations
 
-Foundations are either combined or individual spread reinforced concrete footings.
-
-In addition to the main structural framing, the calculation verifies the structural adequacy of:									
-
-* Footings including hold down bolts									
-* Mechanical frames and equipment plinths
-* Associated chute-work and chute supports
-
-## Exclusions
-This calculation excludes the following:
-
-* Design of the process / mechanical function for items where structural design has been completed, e.g. chutes, hoppers
-* Structural design of vendor supplied equipment
-
-{{< pagebreak >}}
-
-# Basis of Design									
-
-This calculation has been completed in accordance with XXXX. The Basis of Design for this calculation is described in XXXX, with mechanical load data in accordance with the XXXX.
-
-## Design Standards and Codes
-Unless specifically noted, the design complies with Australian Standards and selected international standards as listed in the Design Criteria. The following summarises the key standards used in producing this calculation:
-
-* AS 1170.0 - 2002		Structural design actions - Part 0: General principles
-* AS 1170.1 - 2002		Structural design actions - Part 1: Permanent, imposed and other actions
-* AS 1170.2 - 2021		Structural design actions - Part 2: Wind actions
-* AS 1170.4 - 2007		Structural design actions - Part 4: Earthquake Actions in Australia
-* AS 3600 - 2018		Concrete structures
-* AS 4100 - 1998		Steel structures
-
-## Other Reference Documents
-
-Other reference documents used in this design include:
-
-* Geotechnical Report
-* Certified Vendor Drawings
-
-## Client Provided Information
-The following information has been provided by the client:
-
-* Something
-* Something else.
-
-## Holds
+| Item | Reference | Year | Description |
+|---------|----------|----------|----------|
+| |AS 4100|2020|Steel Structures|
 
 {{< pagebreak >}}
 

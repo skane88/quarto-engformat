@@ -126,8 +126,8 @@
     level: 1
   ): it => {
     block(width: 100%)[
-      #box(width: 100%, stroke: (bottom:1pt + rgb("ce190d")), outset: (bottom: .5em))[
-      #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("333333")))
+      #box(width: 100%, stroke: (bottom:0.5pt + rgb("000000")), outset: (bottom: .5em))[
+      #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("228C3D")))
       #it]
       #v(0.5em)
     ]
@@ -136,12 +136,12 @@
   // format heading 2 differently from the rest.
   show heading.where(
     level: 2
-  ): it => text(weight: "bold", size: 14pt, font: ("Arial"), fill: (rgb("333333")), it)
+  ): it => text(weight: "bold", size: 12pt, font: ("Arial"), fill: (rgb("228C3D")), it)
 
   // format heading 3 differently from the rest.
   show heading.where(
     level: 3
-  ): it => text(weight: "bold", size: 12pt, font: ("Arial"), fill: (rgb("9A1209")), it)
+  ): it => text(weight: "bold", size: 10pt, font: ("Arial"), fill: (rgb("228C3D")), it)
 
   // format links.
   show link: it => underline(text(fill: rgb("0D79CE"), it))
@@ -149,17 +149,16 @@
   // format code.
   show raw: set text(font: "Arial")
 
-  show table.cell.where(y: 0): set text(weight: "bold", fill: white, font: ("Arial"))
+  show table.cell.where(y: 0): set text(weight: "bold", font: ("Arial"))
   set table(
-    fill: (_, y) => if y == 0 { rgb("9A1209")},
+    fill: (_, y) => if y == 0 { rgb("e5e5e6")},
     stroke: (_, y) => (
-      top: if y <= 1 { none } else { 0.5pt + rgb("848484") },
-      bottom: if y == 0 { none } else { 0.5pt + rgb("848484") },
+      top: if y <= 1 { none } else { 0.5pt + rgb("3f4042") },
+      bottom: if y == 0 { none } else { 0.5pt + rgb("3f4042") },
       left: none,
       right: none,
     )
   )
-  set table.hline(stroke: none)
   show table: it => align(center, it)
 
   place(
@@ -189,8 +188,8 @@
 
 #let like_header(it) = {
   v(0.5em)
-  box(width: 100%, stroke: (bottom:1pt + rgb("ce190d")), outset: (bottom: -2pt))[
-    #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("333333")))
+  box(width: 100%, stroke: (bottom:0.5pt + rgb("000000")), outset: (bottom: -2pt))[
+    #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("228C3D")))
     #it
     #v(0.5em)
   ]

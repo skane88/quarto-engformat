@@ -134,6 +134,7 @@
     bottom,
     float: true,
     [
+      #text(weight: "bold", size: 12pt, fill: rgb("228c3d"))[QA Record]
       #set text(size: 8pt)
       #table(
           columns: (1.3fr, 2fr, 1.1fr, 2fr, 1.3fr, 2fr, 2fr),

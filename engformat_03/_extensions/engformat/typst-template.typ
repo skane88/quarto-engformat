@@ -14,29 +14,6 @@
   if logo_path != none {[#image(logo_path)]} else {[]}
 }
 
-#let rev_table(max_items: 3, data) = {
-  // Build a revision table for the footer.
-  // If no. revisions > max_items only max_items-1 will be shown
-  
-  data = data.rev()
-  // rev_data comes in last to first, but rev table in footer is
-  // latest on top.
-
-  if data.len() > max_items {
-    data = data.slice(0, max_items)
-  }
-
-  for rev in data{
-      (
-        rev.rev_no,
-        rev.rev_date,
-        rev.rev_desc,
-        rev.rev_prep,
-        rev.rev_check,
-        rev.rev_app,)
-    }
-}
-
 #let disclaimer(company: "COMPANY", client: "CLIENT", proj_title: "SOME PROJECT") = {
   text([This calculation was prepared by ] + company + [ pursuant to the Engineering Services Contract between ] + company + [ and ] + client + [ in connection with the services for ] + proj_title + [.])
 }
@@ -166,11 +143,15 @@
     [
       #set text(size: 8pt)
       #table(
-          columns: (1fr,2fr,6fr,3fr,3fr,3fr,),
-          table.header(
-              [*Rev.*], [*Date*], [*Description*], [*Prepared*], [*Checked*], [*Approved*]
-            ),
-            ..rev_table(rev_data)
+          columns: (1.3fr, 2fr, 1.1fr, 2fr, 1.3fr, 2fr, 2fr),
+          fill: none,
+          [#text(weight: "bold", fill: rgb("004270"))[Originator]],
+          [#text(weight: "regular")[#rev_data.last().rev_prep]],
+          [#text(weight: "bold", fill: rgb("004270"))[Checked]],
+          [#text(weight: "regular")[#rev_data.last().rev_check]],
+          [#text(weight: "bold", fill: rgb("004270"))[Approved]],
+          [#text(weight: "regular")[#rev_data.last().rev_app]],
+          [#text(weight: "regular")[#rev_data.last().rev_date]],
           )
       #disclaimer(company: company, client: client, proj_title: proj_title)
     ]

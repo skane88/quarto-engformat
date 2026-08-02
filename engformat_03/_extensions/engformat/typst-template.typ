@@ -59,7 +59,7 @@
       #table(
         columns: (1fr, 1fr),
         fill: none,
-        stroke: (x, y) => (top: if y == 0 { 0.5pt + rgb("3f4042") } else { none }),
+        stroke: (x, y) => (top: if y == 0 { 0.5pt + rgb("#3f4042") } else { none }),
         table.cell(align: left)[#upper([#company])], table.cell(align: right)[COMMERCIAL IN CONFIDENCE],
         [], table.cell(align: right)[Page #counter(page).display("1 of 1", both: true)],
       )
@@ -68,19 +68,30 @@
     header: [
       #set text(size: 8pt, font: ("Arial"))
       #table(
-        columns: (2.0fr, 1.10fr, 3.1fr, 1.5fr, 1.5fr),
+        columns: (2.0fr, 4.5fr, 1.5fr, 1.5fr),
         rows: (1cm, 0.4cm, 0.4cm, 0.4cm, 0.4cm),
         fill: none,
-        stroke: (x, _) => (left: if x > 0 { 0.5pt + rgb("3f4042") } else { none }),
+        stroke: (x, _) => (left: if x > 0 { 0.5pt + rgb("#3f4042") } else { none }),
         align: (x, y) => (if x == 0 and y == 0 { center } else { left }) + horizon,
         table.cell(
-          inset: 2pt,
+          inset: 0pt,
+          fill: (rgb("#228C3D"))
           )[#logo(logo_path:logo_company)],
-        table.cell(colspan: 4, align: center)[#text(size: 16pt)[Design Development Plan Form]],
-        [*Project Name*],table.cell(colspan: 4)[#proj_name],
-        [*Project Number*],table.cell(colspan: 4)[#proj_number],
-        [*Document Author*],table.cell(colspan: 4)[#rev_data.last().rev_prep],
-        [*File Name*],table.cell(colspan: 2)[#(calc_no + "_" + rev_data.last().rev_no) #calc_title],[*Issued Date*],table.cell(align: right)[#rev_data.last().rev_date],
+        table.cell(colspan: 3, align: center)[#text(size: 16pt)[Design Development Plan Form]],
+        table.cell(
+          fill: (rgb("#e5e5e6"))
+          )[*Project Name*],table.cell(colspan: 3)[#proj_name],
+        table.cell(
+          fill: (rgb("#e5e5e6"))
+          )[*Project Number*],table.cell(colspan: 3)[#proj_number],
+        table.cell(
+          fill: (rgb("#e5e5e6"))
+          )[*Document Author*],table.cell(colspan: 3)[#rev_data.last().rev_prep],
+        table.cell(
+          fill: (rgb("#e5e5e6"))
+          )[*File Name*],[#(calc_no + "_" + rev_data.last().rev_no) #calc_title],table.cell(
+          fill: (rgb("#e5e5e6"))
+          )[*Issued Date*],table.cell(align: right)[#rev_data.last().rev_date],
       )
     ],
     header-ascent: 10%,
@@ -97,8 +108,8 @@
     level: 1
   ): it => {
     block(width: 100%)[
-      #box(width: 100%, stroke: (bottom:0.5pt + rgb("000000")), outset: (bottom: .5em))[
-      #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("228C3D")))
+      #box(width: 100%, stroke: (bottom:0.5pt + rgb("#000000")), outset: (bottom: .5em))[
+      #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("#228C3D")))
       #it]
       #v(0.5em)
     ]
@@ -107,23 +118,23 @@
   // format heading 2 differently from the rest.
   show heading.where(
     level: 2
-  ): it => text(weight: "bold", size: 12pt, font: ("Arial"), fill: (rgb("228C3D")), it)
+  ): it => text(weight: "bold", size: 12pt, font: ("Arial"), fill: (rgb("#228C3D")), it)
 
   // format heading 3 differently from the rest.
   show heading.where(
     level: 3
-  ): it => text(weight: "bold", size: 10pt, font: ("Arial"), fill: (rgb("228C3D")), it)
+  ): it => text(weight: "bold", size: 10pt, font: ("Arial"), fill: (rgb("#228C3D")), it)
 
   // format links.
   show link: it => underline(text(fill: rgb("#004270"), it))
 
   show table.cell.where(y: 0): set text(weight: "bold", font: ("Arial"))
   set table(
-    fill: (_, y) => if y == 0 { rgb("e5e5e6")},
+    fill: (_, y) => if y == 0 { rgb("#e5e5e6")},
     stroke: (x, _) => (
-      top: 0.5pt + rgb("3f4042"),
-      bottom: 0.5pt + rgb("3f4042"),
-      left: if x > 0 { 0.5pt + rgb("3f4042") } else { none },
+      top: 0.5pt + rgb("#3f4042"),
+      bottom: 0.5pt + rgb("#3f4042"),
+      left: if x > 0 { 0.5pt + rgb("#3f4042") } else { none },
     ),
   )
   show table: it => align(center, it)
@@ -132,16 +143,16 @@
     bottom,
     float: true,
     [
-      #text(weight: "bold", size: 12pt, fill: rgb("228c3d"))[QA Record]
+      #text(weight: "bold", size: 12pt, fill: rgb("#228c3d"))[QA Record]
       #set text(size: 8pt)
       #table(
           columns: (1.3fr, 2fr, 1.1fr, 2fr, 1.3fr, 2fr, 2fr),
           fill: none,
-          [#text(weight: "bold", fill: rgb("004270"))[Originator]],
+          [#text(weight: "bold", fill: rgb("#004270"))[Originator]],
           [#text(weight: "regular")[#rev_data.last().rev_prep]],
-          [#text(weight: "bold", fill: rgb("004270"))[Checked]],
+          [#text(weight: "bold", fill: rgb("#004270"))[Checked]],
           [#text(weight: "regular")[#rev_data.last().rev_check]],
-          [#text(weight: "bold", fill: rgb("004270"))[Approved]],
+          [#text(weight: "bold", fill: rgb("#004270"))[Approved]],
           [#text(weight: "regular")[#rev_data.last().rev_app]],
           [#text(weight: "regular")[#rev_data.last().rev_date]],
           )
@@ -160,8 +171,8 @@
 
 #let like_header(it) = {
   v(0.5em)
-  box(width: 100%, stroke: (bottom:0.5pt + rgb("000000")), outset: (bottom: -2pt))[
-    #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("228C3D")))
+  box(width: 100%, stroke: (bottom:0.5pt + rgb("#000000")), outset: (bottom: -2pt))[
+    #set text(weight: "bold", size: 16pt, font: ("Arial"), fill: (rgb("#228C3D")))
     #it
     #v(0.5em)
   ]

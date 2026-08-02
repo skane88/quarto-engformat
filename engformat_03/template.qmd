@@ -83,36 +83,67 @@ For actual use, the introduction should be a _brief_ description of the calculat
 ##	Design Changes
 ##	Governing Standard and Regulations
 
+The following table lists the primary standards and specifications and specifications followed for this project.
+
+The following is a pipe-table. This is the simplest form of table with limited formatting options. It can be cross referenced (@tbl-specs-pipe), and can be given captions.
+
 | Item | Reference | Year | Description |
 |---------|----------|----------|----------|
-| |AS 4100|2020|Steel Structures|
+| |AS 4100 | 2020|Steel Structures|
+| | | | |
+| | | | |
+
+: Standards and Specifications {#tbl-specs-pipe}
+
+The following is a list-table (@tbl-specs-list). This is a complex table type that allows more formatting options and the ability to merge cells. However, the table is quite difficult to write, so use should generally be limited.
+
+::: {#tbl-specs-list .list-table aligns="l" tbl-colwidths="[10,25, 15, 50]" }
+Standards and Specifications.
+
+- - Item
+  - Reference
+  - Year
+  - Description
+
+- - []{colspan=4} Standards
+
+- -
+  - AS 4100
+  - 2020
+  - Steel Structures
+
+- -
+  -
+  -
+  -
+
+- - []{colspan=4} Specifications
+
+- -
+  -
+  -
+  -
+
+:::
+
+It is also possible to directly incorporate `typst` blocks into the document for complete control over formatting.
 
 {{< pagebreak >}}
 
 # Work Records
 
-## Design Calculations
 The following design calculations have been relied upon in the preparation of this calculation:
 
 | Doc Number | Title | Revision | Link / Path |
 |---------|----------|----------|----------|
-|26xxx_CAL002|Structural Steel Design|A|[link](https://example.com)|
-|26xxx_CAL003|Foundation Design|A|[link](https://example.com)|
+|R26xxx_CAL002|Structural Steel Design|A|[link](https://example.com)|
+|R26xxx_CAL003|Foundation Design|A|[link](https://example.com)|
 
-## Output
-This calculation covers the structural components on the drawings and/or sketches listed in the following table:	
-
-|Drawing Number|Drawing Title| Revision |
-|---------|----------|----------|
-|0001|General Arrangement|A|
-|0002|Details 1|0|
-|0003|Details 2|C1|
-|0004|Earthworks|x|
-: {tbl-refdwgs tbl-colwidths="[20,70,10]"}
+: Work Records {#tbl-work-records}
 
 {{< pagebreak >}}
 
-# Loads
+# Design Loading
 This section describes the loads applied.
 
 ## Gravity Loads
@@ -149,6 +180,12 @@ Break into multiple load cases if required.
 Break into multiple load cases if required.
 
 ## Load Combinations
+
+### Ultimate Limit State (ULS) Load Combinations
+
+### Serviceability Limit State (SLS) Load Combinations
+
+### Fatigue and Design Life Combinations
 
 {{< pagebreak >}}
 

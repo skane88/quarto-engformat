@@ -69,7 +69,7 @@
       #set text(size: 8pt, font: ("Arial"))
       #table(
         columns: (2.0fr, 1.10fr, 3.1fr, 1.5fr, 1.5fr),
-        rows: (1cm, 0.5cm, 0.5cm, 0.5cm, 0.5cm),
+        rows: (1cm, 0.4cm, 0.4cm, 0.4cm, 0.4cm),
         fill: none,
         stroke: (x, _) => (left: if x > 0 { 0.5pt + rgb("3f4042") } else { none }),
         align: (x, y) => (if x == 0 and y == 0 { center } else { left }) + horizon,

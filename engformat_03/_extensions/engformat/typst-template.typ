@@ -152,7 +152,11 @@
   show table.cell.where(y: 0): set text(weight: "bold", font: ("Arial"))
   set table(
     fill: (_, y) => if y == 0 { rgb("e5e5e6")},
-    stroke: (top: 0.5pt + rgb("3f4042"), bottom: 0.5pt + rgb("3f4042")),
+    stroke: (x, _) => (
+      top: 0.5pt + rgb("3f4042"),
+      bottom: 0.5pt + rgb("3f4042"),
+      left: if x > 0 { 0.5pt + rgb("3f4042") } else { none },
+    ),
   )
   show table: it => align(center, it)
 

@@ -80,7 +80,7 @@
         [*Project Name*],table.cell(colspan: 4)[#proj_name],
         [*Project Number*],table.cell(colspan: 4)[#proj_number],
         [*Document Author*],table.cell(colspan: 4)[#rev_data.last().rev_prep],
-        [*File Name*],table.cell(colspan: 2)[#calc_no #calc_title],[*Issued Date*],table.cell(align: right)[#rev_data.last().rev_date],
+        [*File Name*],table.cell(colspan: 2)[#(calc_no + "_" + rev_data.last().rev_no) #calc_title],[*Issued Date*],table.cell(align: right)[#rev_data.last().rev_date],
       )
     ],
     header-ascent: 10%,

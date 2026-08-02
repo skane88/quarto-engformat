@@ -144,7 +144,7 @@
   ): it => text(weight: "bold", size: 10pt, font: ("Arial"), fill: (rgb("228C3D")), it)
 
   // format links.
-  show link: it => underline(text(fill: rgb("0D79CE"), it))
+  show link: it => underline(text(fill: rgb("#004270"), it))
 
   // format code.
   show raw: set text(font: "Arial")
@@ -152,12 +152,7 @@
   show table.cell.where(y: 0): set text(weight: "bold", font: ("Arial"))
   set table(
     fill: (_, y) => if y == 0 { rgb("e5e5e6")},
-    stroke: (_, y) => (
-      top: if y <= 1 { none } else { 0.5pt + rgb("3f4042") },
-      bottom: if y == 0 { none } else { 0.5pt + rgb("3f4042") },
-      left: none,
-      right: none,
-    )
+    stroke: (top: 0.5pt + rgb("3f4042"), bottom: 0.5pt + rgb("3f4042")),
   )
   show table: it => align(center, it)
 
